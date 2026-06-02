@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yadu Krishna — QA Leader Snapshot</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#06091a;--bg2:#0a0f24;--card:#0f1630;--card2:#121835;
+  --teal:#00d4ff;--teal2:#00ffcc;--gold:#f5c542;--violet:#8b5cf6;
+  --green:#22d3a0;--coral:#ff6b6b;--white:#ffffff;
+  --text:#d0daf0;--muted:#5a6a90;--border:rgba(0,212,255,0.12);
+  --font:'Inter',sans-serif;--mono:'JetBrains Mono',monospace;
+}
+body{background:var(--bg);color:var(--white);font-family:var(--font);min-height:100vh;padding:20px}
+.page{max-width:1080px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+
+/* ── HEADER ── */
+.header{
+  background:linear-gradient(135deg,#0a0f24 0%,#0f1a3a 50%,#091528 100%);
+  border:1px solid var(--border);border-radius:16px;
+  padding:28px 32px;
+  display:grid;grid-template-columns:auto 1fr auto;
+  gap:28px;align-items:center;
+  position:relative;overflow:hidden;
+}
+.header::before{
+  content:'';position:absolute;top:-60px;right:-60px;
+  width:300px;height:300px;
+  background:radial-gradient(circle,rgba(0,212,255,.08),transparent 70%);
+  pointer-events:none;
+}
+.header::after{
+  content:'';position:absolute;bottom:-40px;left:200px;
+  width:200px;height:200px;
+  background:radial-gradient(circle,rgba(139,92,246,.06),transparent 70%);
+  pointer-events:none;
+}
+.hphoto{
+  width:110px;height:110px;border-radius:50%;
+  border:3px solid var(--teal);
+  object-fit:cover;flex-shrink:0;
+  box-shadow:0 0 30px rgba(0,212,255,.25);
+  position:relative;z-index:1;
+}
+.hinfo{position:relative;z-index:1}
+.hname{font-size:28px;font-weight:800;color:var(--white);letter-spacing:-.5px;margin-bottom:4px}
+.hrole{font-size:14px;color:var(--teal);font-weight:600;margin-bottom:6px}
+.htags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:14px}
+.htag{font-size:11px;padding:3px 10px;border-radius:20px;background:rgba(0,212,255,.08);border:1px solid rgba(0,212,255,.2);color:var(--teal);font-family:var(--mono)}
+.hbtns{display:flex;gap:10px}
+.hbtn{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;padding:8px 18px;border-radius:6px;text-decoration:none;transition:all .2s;cursor:pointer;border:none}
+.hbtn-p{background:var(--teal);color:#000}
+.hbtn-p:hover{background:#00ffee}
+.hbtn-s{background:transparent;color:var(--text);border:1px solid var(--border)}
+.hbtn-s:hover{border-color:var(--teal);color:var(--teal)}
+.hright{display:flex;flex-direction:column;gap:12px;align-items:flex-end;position:relative;z-index:1}
+.hkpi{text-align:center;padding:10px 16px;background:rgba(0,212,255,.06);border:1px solid var(--border);border-radius:8px}
+.hkpi-val{font-size:24px;font-weight:800;color:var(--white);letter-spacing:-1px;line-height:1}
+.hkpi-val em{color:var(--teal);font-style:normal}
+.hkpi-lbl{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+.hkpi-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+
+/* ── STAT BAR ── */
+.stat-bar{
+  background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:16px 24px;
+  display:grid;grid-template-columns:repeat(6,1fr);gap:0;
+}
+.sb-item{
+  text-align:center;padding:0 16px;
+  border-right:1px solid var(--border);
+}
+.sb-item:last-child{border-right:none}
+.sb-val{font-size:22px;font-weight:800;color:var(--white);letter-spacing:-1px;line-height:1}
+.sb-val em{color:var(--teal);font-style:normal}
+.sb-lbl{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-top:3px}
+
+/* ── MAIN GRID ── */
+.main-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.col-left{display:flex;flex-direction:column;gap:12px}
+.col-mid{display:flex;flex-direction:column;gap:12px}
+.col-right{display:flex;flex-direction:column;gap:12px}
+
+/* Card base */
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;position:relative;overflow:hidden}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--teal),transparent)}
+.card-title{font-size:12px;font-weight:700;color:var(--teal);letter-spacing:1.5px;text-transform:uppercase;display:flex;align-items:center;gap:8px;margin-bottom:14px}
+.card-title svg{width:14px;height:14px;flex-shrink:0}
+
+/* Summary */
+.summary-text{font-size:12px;color:var(--text);line-height:1.75}
+.summary-text b{color:var(--white);font-weight:600}
+
+/* Skill bars */
+.skill-row{display:flex;align-items:center;gap:8px;margin-bottom:9px}
+.skill-name{font-size:11px;color:var(--text);width:120px;flex-shrink:0}
+.skill-track{flex:1;height:5px;background:rgba(255,255,255,.06);border-radius:3px;overflow:hidden}
+.skill-fill{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--teal),var(--teal2))}
+.skill-pct{font-family:var(--mono);font-size:10px;color:var(--muted);width:28px;text-align:right}
+
+/* Experience */
+.exp-item{
+  display:grid;grid-template-columns:auto 1fr;gap:10px;
+  padding-bottom:12px;margin-bottom:12px;
+  border-bottom:1px solid rgba(255,255,255,.04);
+}
+.exp-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.exp-logo{
+  width:36px;height:36px;border-radius:7px;
+  background:var(--card2);border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--mono);font-size:10px;font-weight:700;
+  color:var(--teal);flex-shrink:0;letter-spacing:-.5px;
+}
+.exp-info{}
+.exp-co{font-size:12px;font-weight:700;color:var(--white);margin-bottom:1px}
+.exp-role{font-size:11px;color:var(--teal);margin-bottom:1px}
+.exp-dates{font-size:10px;color:var(--muted);font-family:var(--mono)}
+.exp-toggle{
+  display:inline-flex;align-items:center;gap:4px;
+  font-size:10px;color:var(--muted);cursor:pointer;
+  margin-top:3px;transition:color .15s;
+}
+.exp-toggle:hover{color:var(--teal)}
+.exp-detail{
+  grid-column:1/-1;
+  font-size:11px;color:var(--text);line-height:1.6;
+  max-height:0;overflow:hidden;transition:max-height .3s ease;
+  padding-left:46px;
+}
+.exp-detail.open{max-height:200px}
+
+/* Certs */
+.cert-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.cert-badge{
+  background:var(--card2);border:1px solid var(--border);
+  border-radius:8px;padding:8px 10px;
+  display:flex;align-items:center;gap:8px;
+  transition:all .15s;cursor:default;
+}
+.cert-badge:hover{border-color:rgba(0,212,255,.3);background:rgba(0,212,255,.05)}
+.cert-ico{
+  width:28px;height:28px;border-radius:5px;
+  background:rgba(0,212,255,.1);
+  display:flex;align-items:center;justify-content:center;
+  font-size:11px;font-weight:700;color:var(--teal);font-family:var(--mono);flex-shrink:0;
+}
+.cert-nm{font-size:10px;color:var(--text);line-height:1.3;font-weight:500}
+.cert-by{font-size:9px;color:var(--muted)}
+
+/* Innovation */
+.innov-item{
+  padding:10px 12px;background:var(--card2);
+  border:1px solid var(--border);border-radius:8px;
+  margin-bottom:7px;cursor:default;transition:all .15s;
+}
+.innov-item:last-child{margin-bottom:0}
+.innov-item:hover{border-color:rgba(0,212,255,.25);background:rgba(0,212,255,.04)}
+.innov-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:4px}
+.innov-title{font-size:11px;font-weight:600;color:var(--white);flex:1;padding-right:8px;line-height:1.4}
+.innov-metric{font-family:var(--mono);font-size:13px;font-weight:700;color:var(--teal);white-space:nowrap}
+.innov-desc{font-size:10px;color:var(--muted);line-height:1.5}
+
+/* Domain pie-like */
+.domain-items{display:flex;flex-direction:column;gap:8px}
+.domain-row{display:flex;align-items:center;gap:8px}
+.domain-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.domain-lbl{font-size:11px;color:var(--text);flex:1}
+.domain-bar{width:80px;height:4px;background:rgba(255,255,255,.06);border-radius:2px;overflow:hidden}
+.domain-fill{height:100%;border-radius:2px}
+.domain-yrs{font-family:var(--mono);font-size:10px;color:var(--muted);width:32px;text-align:right}
+
+/* Global flags */
+.flags-grid{display:flex;flex-direction:column;gap:7px}
+.flag-row{display:flex;align-items:center;gap:8px;padding:7px 10px;background:var(--card2);border:1px solid var(--border);border-radius:7px;transition:all .15s}
+.flag-row:hover{border-color:rgba(0,212,255,.25)}
+.flag-emoji{font-size:16px}
+.flag-name{font-size:11px;font-weight:600;color:var(--white);flex:1}
+.flag-detail{font-size:10px;color:var(--muted)}
+.flag-count{font-family:var(--mono);font-size:11px;color:var(--teal);font-weight:700}
+
+/* Contact */
+.contact-items{display:flex;flex-direction:column;gap:8px}
+.contact-row{display:flex;align-items:center;gap:10px;padding:9px 12px;background:var(--card2);border:1px solid var(--border);border-radius:8px;transition:all .15s;text-decoration:none}
+.contact-row:hover{border-color:rgba(0,212,255,.3);background:rgba(0,212,255,.05)}
+.contact-ico{width:28px;height:28px;border-radius:6px;background:rgba(0,212,255,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.contact-ico svg{width:13px;height:13px;color:var(--teal)}
+.contact-lbl{font-size:10px;color:var(--muted)}
+.contact-val{font-size:12px;color:var(--white);font-weight:500}
+
+/* Tools cloud */
+.tools-wrap{display:flex;flex-wrap:wrap;gap:5px}
+.tool{font-size:10px;font-family:var(--mono);padding:3px 9px;border-radius:4px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);color:var(--muted);transition:all .15s;cursor:default}
+.tool:hover{background:rgba(0,212,255,.08);border-color:rgba(0,212,255,.2);color:var(--teal)}
+
+/* Footer */
+.footer{text-align:center;padding:12px;font-size:11px;color:var(--muted);font-family:var(--mono)}
+.footer span{color:var(--teal)}
+
+/* Animated pulse on teal accent */
+@keyframes softpulse{0%,100%{opacity:.8}50%{opacity:1}}
+.live-dot{width:7px;height:7px;border-radius:50%;background:var(--green);display:inline-block;animation:softpulse 2s infinite;margin-right:4px}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <img class="hphoto" src="data:image/jpeg;base64,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" alt="Yadu Krishna">
+    <div class="hinfo">
+      <div class="hname">Yadu Krishna Chaitanya Banala</div>
+      <div class="hrole"><span class="live-dot"></span>Senior Test Manager &nbsp;&middot;&nbsp; QA Architect &nbsp;&middot;&nbsp; Digital Transformation Leader</div>
+      <div class="htags">
+        <span class="htag">JSE Mainframe Modernization</span>
+        <span class="htag">COBOL &middot; IDEAL 4GL</span>
+        <span class="htag">Azure 3&times; Certified</span>
+        <span class="htag">TOSCA &times;6</span>
+        <span class="htag">SAFe Agilist</span>
+        <span class="htag">GenAI Tooling</span>
+        <span class="htag">Playwright</span>
+      </div>
+      <div class="hbtns">
+        <a href="https://www.linkedin.com/in/kcprofile" target="_blank" class="hbtn hbtn-p">&#128279; LinkedIn Profile</a>
+        <a href="https://banalachaitu.github.io/yadukrishna-resume" target="_blank" class="hbtn hbtn-s">&#127760; Interactive Resume</a>
+        <a href="mailto:banalachaitu@gmail.com" class="hbtn hbtn-s">&#128231; Hire Me</a>
+      </div>
+    </div>
+    <div class="hright">
+      <div class="hkpi-row">
+        <div class="hkpi"><div class="hkpi-val">19<em>+</em></div><div class="hkpi-lbl">Years Exp</div></div>
+        <div class="hkpi"><div class="hkpi-val">70<em>+</em></div><div class="hkpi-lbl">Team Led</div></div>
+        <div class="hkpi"><div class="hkpi-val">7</div><div class="hkpi-lbl">Countries</div></div>
+      </div>
+      <div class="hkpi-row">
+        <div class="hkpi"><div class="hkpi-val">40<em>%</em></div><div class="hkpi-lbl">GenAI Gain</div></div>
+        <div class="hkpi"><div class="hkpi-val">14<em>+</em></div><div class="hkpi-lbl">Projects</div></div>
+        <div class="hkpi"><div class="hkpi-val">13<em>+</em></div><div class="hkpi-lbl">Certs</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STAT BAR -->
+  <div class="stat-bar">
+    <div class="sb-item"><div class="sb-val">19<em>+</em></div><div class="sb-lbl">Years Experience</div></div>
+    <div class="sb-item"><div class="sb-val">5</div><div class="sb-lbl">Employers</div></div>
+    <div class="sb-item"><div class="sb-val">13<em>+</em></div><div class="sb-lbl">Certifications</div></div>
+    <div class="sb-item"><div class="sb-val">80<em>+</em></div><div class="sb-lbl">Programs Analysed</div></div>
+    <div class="sb-item"><div class="sb-val">5</div><div class="sb-lbl">Tools Built @ JSE</div></div>
+    <div class="sb-item"><div class="sb-val">99<em>%</em></div><div class="sb-lbl">Zero-Defect Cutover</div></div>
+  </div>
+
+  <!-- MAIN 3-COL GRID -->
+  <div class="main-grid">
+
+    <!-- LEFT COL -->
+    <div class="col-left">
+
+      <!-- SUMMARY -->
+      <div class="card">
+        <div class="card-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+          Professional Summary
+        </div>
+        <div class="summary-text">
+          Seasoned <b>QA Manager &amp; Project Manager</b> with <b>19+ years</b> driving end-to-end Software Testing, Quality Assurance and Project Delivery across <b>BFSI, Utilities, Retail &amp; Energy</b> globally.<br><br>
+          Currently leading <b>JSE Mainframe Modernization</b> at Trianz Digital &mdash; directing <b>70+ member multi-shore team</b> across AU, UK, EU, USA &amp; India. Built 5 proprietary Python automation tools eliminating weeks of manual effort. <b>40% efficiency gain</b> via GenAI.
+        </div>
+      </div>
+
+      <!-- SKILL BARS -->
+      <div class="card">
+        <div class="card-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+          Skill Proficiency
+        </div>
+        <div class="skill-row"><span class="skill-name">QA Strategy</span><div class="skill-track"><div class="skill-fill" style="width:96%"></div></div><span class="skill-pct">96%</span></div>
+        <div class="skill-row"><span class="skill-name">Agile / SAFe</span><div class="skill-track"><div class="skill-fill" style="width:94%"></div></div><span class="skill-pct">94%</span></div>
+        <div class="skill-row"><span class="skill-name">Stakeholder Mgmt</span><div class="skill-track"><div class="skill-fill" style="width:94%"></div></div><span class="skill-pct">94%</span></div>
+        <div class="skill-row"><span class="skill-name">TOSCA Automation</span><div class="skill-track"><div class="skill-fill" style="width:90%"></div></div><span class="skill-pct">90%</span></div>
+        <div class="skill-row"><span class="skill-name">Mainframe/COBOL</span><div class="skill-track"><div class="skill-fill" style="width:88%"></div></div><span class="skill-pct">88%</span></div>
+        <div class="skill-row"><span class="skill-name">Azure Cloud</span><div class="skill-track"><div class="skill-fill" style="width:86%"></div></div><span class="skill-pct">86%</span></div>
+        <div class="skill-row"><span class="skill-name">Playwright / TestNG</span><div class="skill-track"><div class="skill-fill" style="width:86%"></div></div><span class="skill-pct">86%</span></div>
+        <div class="skill-row"><span class="skill-name">CI/CD &amp; DevOps</span><div class="skill-track"><div class="skill-fill" style="width:82%"></div></div><span class="skill-pct">82%</span></div>
+        <div class="skill-row"><span class="skill-name">Python &amp; GenAI</span><div class="skill-track"><div class="skill-fill" style="width:76%"></div></div><span class="skill-pct">76%</span></div>
+      </div>
+
+      <!-- DOMAIN EXPERIENCE -->
+      <div class="card">
+        <div class="card-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a15 15 0 010 20M2 12h20"/></svg>
+          Domain Experience
+        </div>
+        <div class="domain-items">
+          <div class="domain-row"><div class="domain-dot" style="background:#00d4ff"></div><span class="domain-lbl">BFSI &amp; Banking</span><div class="domain-bar"><div class="domain-fill" style="width:100%;background:#00d4ff"></div></div><span class="domain-yrs">19+ yrs</span></div>
+          <div class="domain-row"><div class="domain-dot" style="background:#f5c542"></div><span class="domain-lbl">Utilities &amp; Energy</span><div class="domain-bar"><div class="domain-fill" style="width:70%;background:#f5c542"></div></div><span class="domain-yrs">~7 yrs</span></div>
+          <div class="domain-row"><div class="domain-dot" style="background:#8b5cf6"></div><span class="domain-lbl">Retail &amp; Commerce</span><div class="domain-bar"><div class="domain-fill" style="width:35%;background:#8b5cf6"></div></div><span class="domain-yrs">~3 yrs</span></div>
+          <div class="domain-row"><div class="domain-dot" style="background:#22d3a0"></div><span class="domain-lbl">Cloud &amp; Migration</span><div class="domain-bar"><div class="domain-fill" style="width:50%;background:#22d3a0"></div></div><span class="domain-yrs">~5 yrs</span></div>
+          <div class="domain-row"><div class="domain-dot" style="background:#ff6b6b"></div><span class="domain-lbl">Mainframe &amp; Legacy</span><div class="domain-bar"><div class="domain-fill" style="width:42%;background:#ff6b6b"></div></div><span class="domain-yrs">~4 yrs</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- MIDDLE COL -->
+    <div class="col-mid">
+
+      <!-- EXPERIENCE -->
+      <div class="card" style="flex:1">
+        <div class="card-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+          Professional Experience
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-logo">TDC</div>
+          <div class="exp-info">
+            <div class="exp-co">Trianz Digital Consultancy</div>
+            <div class="exp-role">Senior Test Manager</div>
+            <div class="exp-dates">Jul 2025 &rarr; Present &nbsp;&bull;&nbsp; 70+ Team &nbsp;&bull;&nbsp; AU/UK/EU/USA/IN</div>
+            <div class="exp-toggle" onclick="toggleExp(this)">&#9660; Show details</div>
+          </div>
+          <div class="exp-detail">JSE Mainframe Modernization &mdash; IDEAL 4GL &amp; COBOL to Java/Angular/AWS. Built 5 proprietary Python tools. GenAI-powered documentation. VSAM&rarr;DB2 migration. Zero high-severity defects at cutover.</div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-logo">RBT</div>
+          <div class="exp-info">
+            <div class="exp-co">Ray Business Technologies</div>
+            <div class="exp-role">QA Manager / Project Manager</div>
+            <div class="exp-dates">Jan 2022 &ndash; May 2025 &nbsp;&bull;&nbsp; 30 Team &nbsp;&bull;&nbsp; AU/CA/USA/IN/PH</div>
+            <div class="exp-toggle" onclick="toggleExp(this)">&#9660; Show details</div>
+          </div>
+          <div class="exp-detail">14+ concurrent projects &mdash; Marcaria, SYDA, ABS CBN, CAMS, Retail Academy, RAPS, Screen Rights, CWR-AX, HGX, PO Automation, AML. Enterprise QA frameworks &amp; pre-sales advisory.</div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-logo">WPR</div>
+          <div class="exp-info">
+            <div class="exp-co">Wipro Technologies</div>
+            <div class="exp-role">Test Manager / Project Manager</div>
+            <div class="exp-dates">Feb 2013 &ndash; Jan 2022 &nbsp;&bull;&nbsp; 9 Years &nbsp;&bull;&nbsp; Hyd / Birmingham UK</div>
+            <div class="exp-toggle" onclick="toggleExp(this)">&#9660; Show details</div>
+          </div>
+          <div class="exp-detail">Lloyds Banking Group (BFSI) &middot; Xoserve Azure Cloud Migration &middot; Xoserve SAP Maintenance Upgrade &middot; RWE Npower EMR Phase 5A &amp; 5B &middot; On-site Birmingham &amp; Solihull UK.</div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-logo">VIT</div>
+          <div class="exp-info">
+            <div class="exp-co">ViT Consultancy Pvt. Ltd.</div>
+            <div class="exp-role">Senior Test Engineer</div>
+            <div class="exp-dates">Jun 2011 &ndash; Feb 2013 &nbsp;&bull;&nbsp; 8 Team</div>
+            <div class="exp-toggle" onclick="toggleExp(this)">&#9660; Show details</div>
+          </div>
+          <div class="exp-detail">End-to-end functional, regression, integration &amp; performance testing. Mentored junior QA engineers in STLC, test design &amp; defect management best practices.</div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-logo">HSB</div>
+          <div class="exp-info">
+            <div class="exp-co">HSBC India Pvt. Ltd.</div>
+            <div class="exp-role">Tester</div>
+            <div class="exp-dates">Aug 2006 &ndash; May 2011 &nbsp;&bull;&nbsp; BFSI Foundation</div>
+            <div class="exp-toggle" onclick="toggleExp(this)">&#9660; Show details</div>
+          </div>
+          <div class="exp-detail">Core banking functional &amp; regression testing in high-compliance BFSI environment. Built the BFSI domain expertise that underpins 19+ years of QA leadership.</div>
+        </div>
+      </div>
+
+      <!-- TOOLS -->
+      <div class="card">
+        <div class="card-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+          Tools &amp; Technologies
+        </div>
+        <div class="tools-wrap">
+          <span class="tool">TOSCA L1/L2</span><span class="tool">Playwright</span><span class="tool">Selenium</span><span class="tool">TestNG</span><span class="tool">Robot FW</span><span class="tool">JMeter</span><span class="tool">Katalon</span><span class="tool">SOAP UI</span><span class="tool">Postman</span><span class="tool">RestAssured</span><span class="tool">Azure DevOps</span><span class="tool">Terraform</span><span class="tool">AWS</span><span class="tool">Jenkins</span><span class="tool">GitHub</span><span class="tool">COBOL</span><span class="tool">JCL</span><span class="tool">CICS</span><span class="tool">DB2</span><span class="tool">VSAM</span><span class="tool">IDEAL 4GL</span><span class="tool">HP ALM</span><span class="tool">JIRA</span><span class="tool">IBM RQM</span><span class="tool">ServiceNow</span><span class="tool">Power BI</span><span class="tool">Python</span><span class="tool">PowerShell</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COL -->
+    <div class="col-right">
+
+      <!-- INNOVATION -->
+      <div class="card">
+        <div class="card-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          Innovation @ JSE BDA
+        </div>
+        <div class="innov-item">
+          <div class="innov-top"><span class="innov-title">Mainframe Code Analysis Automation</span><span class="innov-metric">60% BA</span></div>
+          <div class="innov-desc">Auto-analyses 80+ IDEAL 4GL &amp; COBOL programs &mdash; enables immediate test planning</div>
+        </div>
+        <div class="innov-item">
+          <div class="innov-top"><span class="innov-title">Business Rule Translation Engine</span><span class="innov-metric">50hrs/prog</span></div>
+          <div class="innov-desc">COBOL/IDEAL &rarr; plain business language for non-technical stakeholders</div>
+        </div>
+        <div class="innov-item">
+          <div class="innov-top"><span class="innov-title">End-to-End Work Item Generation</span><span class="innov-metric">3&ndash;4 wks</span></div>
+          <div class="innov-desc">Epics &rarr; Features &rarr; Stories &rarr; Test Cases in one automated pipeline</div>
+        </div>
+        <div class="innov-item">
+          <div class="innov-top"><span class="innov-title">Automated Business Documentation</span><span class="innov-metric">40% faster</span></div>
+          <div class="innov-desc">Full BLA Word docs auto-generated per program from live code</div>
+        </div>
+        <div class="innov-item">
+          <div class="innov-top"><span class="innov-title">Executive Stakeholder Decision Tool</span><span class="innov-metric">Scope &#10003;</span></div>
+          <div class="innov-desc">Interactive app &mdash; led to formal JSE scope freeze with leadership</div>
+        </div>
+      </div>
+
+      <!-- CERTIFICATIONS -->
+      <div class="card">
+        <div class="card-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+          Certifications
+        </div>
+        <div class="cert-grid">
+          <div class="cert-badge"><div class="cert-ico">AZ-900</div><div><div class="cert-nm">Azure Fundamentals</div><div class="cert-by">Microsoft</div></div></div>
+          <div class="cert-badge"><div class="cert-ico">AZ-104</div><div><div class="cert-nm">Azure Admin Associate</div><div class="cert-by">Microsoft</div></div></div>
+          <div class="cert-badge"><div class="cert-ico">AZ-400</div><div><div class="cert-nm">DevOps Engineer Expert</div><div class="cert-by">Microsoft</div></div></div>
+          <div class="cert-badge"><div class="cert-ico">TSCA</div><div><div class="cert-nm">TOSCA Specialist L1/L2</div><div class="cert-by">Tricentis</div></div></div>
+          <div class="cert-badge"><div class="cert-ico">TENG</div><div><div class="cert-nm">TOSCA Engineer L1</div><div class="cert-by">Tricentis</div></div></div>
+          <div class="cert-badge"><div class="cert-ico">TCP</div><div><div class="cert-nm">Tricentis Certified Pro</div><div class="cert-by">Tricentis</div></div></div>
+          <div class="cert-badge"><div class="cert-ico">SAFe</div><div><div class="cert-nm">SAFe&reg; Agilist</div><div class="cert-by">Scaled Agile</div></div></div>
+          <div class="cert-badge"><div class="cert-ico">KAT</div><div><div class="cert-nm">Katalon Expert</div><div class="cert-by">Katalon</div></div></div>
+        </div>
+      </div>
+
+      <!-- GLOBAL DELIVERY -->
+      <div class="card">
+        <div class="card-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a15 15 0 010 20M2 12h20"/></svg>
+          Global Delivery &nbsp;<span style="font-size:10px;color:var(--muted);font-weight:400;text-transform:none;letter-spacing:0">7 countries &middot; 3 continents</span>
+        </div>
+        <div class="flags-grid">
+          <div class="flag-row"><span class="flag-emoji">&#127470;&#127475;</span><span class="flag-name">India</span><span class="flag-detail">All employers &middot; 19yr</span><span class="flag-count">Base</span></div>
+          <div class="flag-row"><span class="flag-emoji">&#127462;&#127482;</span><span class="flag-name">Australia</span><span class="flag-detail">Trianz &middot; Ray BT</span><span class="flag-count">8 proj</span></div>
+          <div class="flag-row"><span class="flag-emoji">&#127468;&#127463;</span><span class="flag-name">UK</span><span class="flag-detail">Wipro &mdash; Birmingham &amp; Solihull</span><span class="flag-count">On-site</span></div>
+          <div class="flag-row"><span class="flag-emoji">&#127487;&#127462;</span><span class="flag-name">South Africa</span><span class="flag-detail">Trianz &mdash; JSE BDA</span><span class="flag-count">JSE</span></div>
+          <div class="flag-row"><span class="flag-emoji">&#127482;&#127480;</span><span class="flag-name">USA</span><span class="flag-detail">Trianz &mdash; D&amp;B US Trade</span><span class="flag-count">3 proj</span></div>
+          <div class="flag-row"><span class="flag-emoji">&#127464;&#127462;</span><span class="flag-name">Canada &amp; Philippines</span><span class="flag-detail">Ray Business Technologies</span><span class="flag-count">4 proj</span></div>
+        </div>
+      </div>
+
+      <!-- CONTACT + EDUCATION -->
+      <div class="card">
+        <div class="card-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Contact &amp; Education
+        </div>
+        <div class="contact-items">
+          <a href="mailto:banalachaitu@gmail.com" class="contact-row">
+            <div class="contact-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+            <div><div class="contact-lbl">Email</div><div class="contact-val">banalachaitu@gmail.com</div></div>
+          </a>
+          <a href="tel:+919989022448" class="contact-row">
+            <div class="contact-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.7 1.14 2 2 0 012.7 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+            <div><div class="contact-lbl">Phone</div><div class="contact-val">+91 9989022448</div></div>
+          </a>
+          <a href="https://www.linkedin.com/in/kcprofile" target="_blank" class="contact-row">
+            <div class="contact-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div>
+            <div><div class="contact-lbl">LinkedIn</div><div class="contact-val">linkedin.com/in/kcprofile</div></div>
+          </a>
+          <a href="https://banalachaitu.github.io/yadukrishna-resume" target="_blank" class="contact-row">
+            <div class="contact-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15 15 0 010 20"/></svg></div>
+            <div><div class="contact-lbl">Interactive Resume</div><div class="contact-val">banalachaitu.github.io</div></div>
+          </a>
+          <div class="contact-row" style="cursor:default">
+            <div class="contact-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+            <div><div class="contact-lbl">Education</div><div class="contact-val">B.A. &mdash; Andhra University, 2010</div></div>
+          </div>
+          <div class="contact-row" style="cursor:default">
+            <div class="contact-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div><div class="contact-lbl">Location</div><div class="contact-val">Hyderabad, India &mdash; 500074</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    &copy; 2025 <span>Yadu Krishna Chaitanya Banala</span> &nbsp;&middot;&nbsp; Senior Test Manager &nbsp;&middot;&nbsp; Hyderabad, India &nbsp;&middot;&nbsp; <span>banalachaitu@gmail.com</span>
+  </div>
+
+</div>
+<script>
+function toggleExp(el){
+  const detail=el.closest('.exp-item').querySelector('.exp-detail');
+  const open=detail.classList.toggle('open');
+  el.textContent=open?'&#9650; Hide details':'&#9660; Show details';
+  el.innerHTML=open?'&#9650; Hide details':'&#9660; Show details';
+}
+</script>
+</body>
+</html>
