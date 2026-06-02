@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yadu Krishna — Senior Test Manager</title>
+<meta name="description" content="Senior Test Manager with 19+ years in QA, mainframe modernization, cloud migration. Global delivery AU, UK, USA, India.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f7f8fc;
+  --bg2:#ffffff;
+  --navy:#0a1628;
+  --navy2:#0f2040;
+  --teal:#0099cc;
+  --teal2:#00bcd4;
+  --teal3:#e0f7fa;
+  --gold:#f59e0b;
+  --gold2:#fef3c7;
+  --violet:#6c5ce7;
+  --violet2:#ede9fe;
+  --green:#059669;
+  --green2:#d1fae5;
+  --coral:#e11d48;
+  --slate:#334155;
+  --slate2:#64748b;
+  --slate3:#94a3b8;
+  --border:#e2e8f0;
+  --border2:#cbd5e1;
+  --white:#ffffff;
+  --text:#1e293b;
+  --font:'Plus Jakarta Sans',sans-serif;
+  --mono:'JetBrains Mono',monospace;
+  --shadow:0 1px 3px rgba(0,0,0,.08),0 4px 16px rgba(0,0,0,.06);
+  --shadow-lg:0 4px 24px rgba(0,0,0,.1),0 12px 48px rgba(0,0,0,.08);
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:hidden;font-size:15px;line-height:1.6}
+::selection{background:rgba(0,153,204,.15);color:var(--navy)}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--teal);border-radius:2px}
+
+/* CURSOR */
+#cur{position:fixed;width:7px;height:7px;background:var(--teal);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:background .2s}
+#cur-r{position:fixed;width:32px;height:32px;border:1.5px solid rgba(0,153,204,.4);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .2s,height .2s,border-color .2s}
+#cur-r.lg{width:46px;height:46px;border-color:var(--teal)}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:400;height:62px;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 5%;
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+  box-shadow:0 1px 12px rgba(0,0,0,.06);
+}
+.n-brand{font-family:var(--mono);font-size:15px;font-weight:700;color:var(--navy);letter-spacing:1px}
+.n-brand span{color:var(--teal)}
+.n-links{display:flex;gap:24px;align-items:center}
+.n-links a{font-size:13px;font-weight:500;color:var(--slate2);text-decoration:none;letter-spacing:.3px;transition:color .18s;padding:4px 0;border-bottom:2px solid transparent;transition:all .18s}
+.n-links a:hover,.n-links a.active{color:var(--teal);border-bottom-color:var(--teal)}
+.n-btn{
+  background:var(--navy)!important;color:#fff!important;
+  padding:8px 20px!important;border-radius:6px!important;
+  border-bottom:none!important;font-weight:600!important;
+  transition:background .18s,transform .18s!important;
+}
+.n-btn:hover{background:var(--teal)!important;transform:translateY(-1px)!important}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:60px;align-items:center;
+  padding:100px 5% 60px;
+  background:var(--white);
+  position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;
+  top:0;right:0;width:55%;height:100%;
+  background:linear-gradient(135deg,#f0f9ff 0%,#e0f2fe 100%);
+  clip-path:polygon(8% 0,100% 0,100% 100%,0 100%);
+  z-index:0;
+}
+.hero-left{position:relative;z-index:1}
+.hero-right{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:28px}
+
+.hero-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--teal3);color:var(--teal);
+  font-size:12px;font-weight:600;letter-spacing:.8px;
+  text-transform:uppercase;padding:6px 14px;border-radius:20px;
+  margin-bottom:20px;
+  animation:fadeUp .5s .1s both;
+}
+.hero-tag::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--green);animation:ping 2s infinite}
+@keyframes ping{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.4)}}
+
+.hero-name{
+  font-size:clamp(32px,4vw,54px);font-weight:800;
+  line-height:1.05;letter-spacing:-1.5px;
+  color:var(--navy);margin-bottom:12px;
+  animation:fadeUp .5s .15s both;
+}
+.hero-name .teal{color:var(--teal)}
+.hero-role{
+  font-size:16px;color:var(--slate2);font-weight:400;
+  margin-bottom:24px;
+  animation:fadeUp .5s .2s both;
+}
+.hero-role strong{color:var(--slate);font-weight:600}
+
+.hero-summary{
+  font-size:15px;line-height:1.8;color:var(--slate);
+  max-width:480px;margin-bottom:32px;
+  animation:fadeUp .5s .25s both;
+}
+.hero-summary b{color:var(--navy);font-weight:600}
+
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;animation:fadeUp .5s .3s both}
+.btn-p{
+  display:inline-flex;align-items:center;gap:7px;
+  background:var(--navy);color:#fff;
+  font-size:14px;font-weight:600;padding:11px 24px;
+  border-radius:7px;text-decoration:none;transition:all .2s;border:none;cursor:pointer;
+}
+.btn-p:hover{background:var(--teal);transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,153,204,.3)}
+.btn-s{
+  display:inline-flex;align-items:center;gap:7px;
+  background:transparent;color:var(--slate);
+  font-size:14px;font-weight:500;padding:11px 24px;
+  border-radius:7px;text-decoration:none;
+  border:1.5px solid var(--border2);transition:all .2s;cursor:pointer;
+}
+.btn-s:hover{border-color:var(--teal);color:var(--teal)}
+
+/* PHOTO */
+.photo-wrap{
+  position:relative;animation:fadeUp .6s .35s both;
+}
+.photo-ring{
+  width:220px;height:220px;border-radius:50%;
+  border:4px solid var(--teal);
+  padding:4px;background:#fff;
+  box-shadow:0 8px 40px rgba(0,153,204,.2);
+  position:relative;z-index:1;
+}
+.photo-ring img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block}
+.photo-badge{
+  position:absolute;bottom:8px;right:-10px;
+  background:var(--navy);color:#fff;
+  font-size:11px;font-weight:700;font-family:var(--mono);
+  padding:6px 12px;border-radius:20px;
+  box-shadow:0 4px 12px rgba(0,0,0,.2);
+  white-space:nowrap;z-index:2;
+}
+.photo-badge span{color:var(--teal)}
+
+/* MINI KPIs below photo */
+.mini-kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;width:100%;max-width:340px}
+.mk{
+  background:var(--white);border:1.5px solid var(--border);
+  border-radius:10px;padding:14px 16px;
+  text-align:center;transition:all .2s;
+  box-shadow:var(--shadow);cursor:default;
+}
+.mk:hover{border-color:var(--teal);transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,153,204,.12)}
+.mk-val{font-size:28px;font-weight:800;color:var(--navy);letter-spacing:-1px;line-height:1}
+.mk-val em{color:var(--teal);font-style:normal}
+.mk-lbl{font-size:11px;color:var(--slate3);text-transform:uppercase;letter-spacing:.8px;margin-top:3px;font-weight:500}
+
+/* CONTACT STRIP */
+.cstrip{
+  display:flex;flex-wrap:wrap;
+  background:var(--navy);
+}
+.ci{
+  display:flex;align-items:center;gap:9px;
+  padding:14px 5%;font-size:13px;color:rgba(255,255,255,.7);
+  border-right:1px solid rgba(255,255,255,.1);flex:1;min-width:160px;
+  transition:background .18s;text-decoration:none;
+}
+.ci:last-child{border-right:none}
+.ci:hover{background:rgba(255,255,255,.07);color:#fff}
+.ci svg{color:var(--teal2);flex-shrink:0}
+.ci-val{color:#fff;font-weight:500}
+
+/* TICKER */
+.ticker-wrap{overflow:hidden;background:var(--teal);padding:10px 0}
+.ticker-inner{display:flex;gap:0;width:max-content;animation:tick 35s linear infinite}
+.ticker-inner:hover{animation-play-state:paused}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.t-item{font-family:var(--mono);font-size:11px;color:rgba(255,255,255,.85);letter-spacing:.8px;text-transform:uppercase;padding:0 28px;white-space:nowrap}
+.t-dot{color:rgba(255,255,255,.4);margin:0 4px}
+
+/* SECTIONS */
+section{padding:80px 5%;position:relative}
+.sec-tag{font-family:var(--mono);font-size:11px;color:var(--teal);letter-spacing:2px;text-transform:uppercase;display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.sec-tag::before{content:'';width:18px;height:2px;background:var(--teal)}
+.sec-h{font-size:clamp(24px,3vw,38px);font-weight:800;letter-spacing:-1px;color:var(--navy);margin-bottom:50px;line-height:1.1}
+.sec-h span{color:var(--teal)}
+
+/* EXPERIENCE — card approach */
+#experience{background:var(--white)}
+.exp-cards{display:flex;flex-direction:column;gap:20px}
+.exp-card{
+  background:var(--bg);border:1.5px solid var(--border);
+  border-radius:14px;overflow:hidden;
+  transition:all .25s;cursor:default;
+}
+.exp-card:hover{border-color:var(--teal);box-shadow:0 6px 32px rgba(0,153,204,.1);transform:translateY(-2px)}
+.exp-card-header{
+  display:grid;grid-template-columns:auto 1fr auto;
+  gap:16px;align-items:center;
+  padding:20px 24px;cursor:pointer;
+  background:var(--white);
+}
+.exp-logo{
+  width:46px;height:46px;border-radius:10px;
+  background:var(--navy);display:flex;align-items:center;
+  justify-content:center;font-family:var(--mono);font-size:13px;
+  font-weight:700;color:var(--teal);flex-shrink:0;letter-spacing:.5px;
+}
+.exp-hdr-mid{}
+.exp-co{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:2px}
+.exp-role-sm{font-size:13px;color:var(--teal);font-weight:500}
+.exp-hdr-right{text-align:right;flex-shrink:0}
+.exp-dates{font-family:var(--mono);font-size:11px;color:var(--slate3);margin-bottom:4px}
+.exp-team{
+  display:inline-flex;align-items:center;gap:5px;
+  background:var(--teal3);color:var(--teal);
+  font-size:11px;font-weight:600;padding:3px 10px;border-radius:12px;
+}
+.exp-body{
+  padding:0 24px;max-height:0;overflow:hidden;
+  transition:max-height .4s cubic-bezier(.4,0,.2,1),padding .4s;
+  border-top:1px solid transparent;
+}
+.exp-body.open{padding:20px 24px;max-height:800px;border-top-color:var(--border)}
+.exp-bullets{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:14px}
+.exp-bullets li{font-size:13.5px;color:var(--slate);line-height:1.65;padding-left:18px;position:relative}
+.exp-bullets li::before{content:'▸';position:absolute;left:0;color:var(--teal);font-size:12px;top:2px;font-weight:700}
+.exp-tags{display:flex;flex-wrap:wrap;gap:6px}
+.exp-tag{font-size:11px;font-family:var(--mono);padding:3px 9px;border-radius:4px;background:var(--white);border:1px solid var(--border2);color:var(--slate2)}
+.exp-toggle{font-size:12px;color:var(--teal);font-weight:600;cursor:pointer;user-select:none;display:flex;align-items:center;gap:4px;margin-top:8px;margin-bottom:4px}
+.exp-toggle svg{transition:transform .3s}
+.exp-toggle.open svg{transform:rotate(180deg)}
+
+/* SKILLS — visual */
+#skills{background:var(--bg)}
+.skills-wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px}
+.skill-group{margin-bottom:32px}
+.sgn{font-size:11px;font-family:var(--mono);color:var(--teal);letter-spacing:1.2px;text-transform:uppercase;padding-bottom:10px;margin-bottom:16px;border-bottom:1.5px solid var(--teal3)}
+.srow{display:flex;align-items:center;gap:12px;margin-bottom:11px;cursor:default}
+.sname{font-size:13px;color:var(--slate);width:200px;flex-shrink:0;font-weight:500}
+.strack{flex:1;height:6px;background:var(--border);border-radius:3px;overflow:hidden}
+.sfill{height:100%;border-radius:3px;width:0;background:linear-gradient(90deg,var(--teal),var(--teal2));transition:width 1.3s cubic-bezier(.4,0,.2,1)}
+.spct{font-family:var(--mono);font-size:11px;color:var(--slate3);width:30px;text-align:right}
+/* pill tools */
+.tool-section{display:flex;flex-direction:column;gap:18px}
+.tc-lbl{font-size:11px;font-family:var(--mono);color:var(--teal);letter-spacing:1px;text-transform:uppercase;margin-bottom:7px}
+.tc-pills{display:flex;flex-wrap:wrap;gap:6px}
+.pill{font-size:12px;font-family:var(--mono);padding:5px 11px;border-radius:5px;background:var(--white);border:1.5px solid var(--border);color:var(--slate);transition:all .15s;cursor:default}
+.pill:hover{background:var(--teal3);border-color:var(--teal);color:var(--teal)}
+
+/* INNOVATION — cards */
+#innovation{background:var(--white)}
+.innov-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.icard{
+  background:linear-gradient(135deg,#f8faff 0%,#f0f4ff 100%);
+  border:1.5px solid #dde4f8;border-radius:12px;
+  padding:24px 20px;transition:all .25s;cursor:default;position:relative;overflow:hidden;
+}
+.icard::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--violet),#a78bfa)}
+.icard:hover{border-color:var(--violet);transform:translateY(-4px);box-shadow:0 8px 30px rgba(108,92,231,.15)}
+.icard:nth-child(4),.icard:nth-child(5){
+  background:linear-gradient(135deg,#f0faf8 0%,#e6f7f5 100%);
+  border-color:#c8e9e4;
+}
+.icard:nth-child(4)::before,.icard:nth-child(5)::before{background:linear-gradient(90deg,var(--teal),var(--teal2))}
+.icard:nth-child(4):hover,.icard:nth-child(5):hover{border-color:var(--teal);box-shadow:0 8px 30px rgba(0,153,204,.15)}
+.inum{font-family:var(--mono);font-size:11px;color:var(--violet);margin-bottom:12px;letter-spacing:.8px}
+.icard:nth-child(4) .inum,.icard:nth-child(5) .inum{color:var(--teal)}
+.ititle{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:10px;line-height:1.3}
+.idesc{font-size:13px;color:var(--slate2);line-height:1.6;margin-bottom:14px}
+.imet{display:flex;align-items:baseline;gap:6px}
+.imet-val{font-size:26px;font-weight:800;color:var(--navy);letter-spacing:-1px;line-height:1}
+.imet-lbl{font-size:12px;color:var(--slate3)}
+
+/* CLIENTS */
+#highlights{background:var(--bg)}
+.hl-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:48px}
+.hcard{background:var(--white);border:1.5px solid var(--border);border-radius:10px;padding:18px;transition:all .2s;cursor:default}
+.hcard:hover{border-color:var(--teal);transform:translateY(-2px);box-shadow:0 4px 20px rgba(0,153,204,.1)}
+.hclient{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:4px}
+.hdomain{font-size:11px;font-family:var(--mono);color:var(--teal);margin-bottom:6px;letter-spacing:.4px}
+.hdetail{font-size:12px;color:var(--slate2);line-height:1.55}
+
+/* domain bars */
+.dom-title{font-size:18px;font-weight:700;color:var(--navy);margin-bottom:20px}
+.dom-bars{display:flex;flex-direction:column;gap:14px}
+.drow{display:flex;align-items:center;gap:14px}
+.dlbl{font-size:13px;color:var(--slate);width:140px;flex-shrink:0;font-weight:500}
+.dtrack{flex:1;height:32px;background:var(--border);border-radius:6px;overflow:hidden;position:relative}
+.dfill{height:100%;border-radius:6px;width:0;display:flex;align-items:center;padding-left:12px;font-size:11px;font-family:var(--mono);font-weight:700;color:#fff;transition:width 1.4s cubic-bezier(.4,0,.2,1);white-space:nowrap}
+.dfill.bfsi{background:linear-gradient(90deg,#0099cc,#00bcd4)}
+.dfill.util{background:linear-gradient(90deg,#f59e0b,#fcd34d);color:var(--navy)}
+.dfill.ret{background:linear-gradient(90deg,#6c5ce7,#a78bfa)}
+.dfill.mf{background:linear-gradient(90deg,#e11d48,#fb7185)}
+.dfill.cloud{background:linear-gradient(90deg,#059669,#34d399)}
+.dyrs{font-family:var(--mono);font-size:12px;color:var(--slate3);width:65px;text-align:right}
+
+/* CERTS */
+#certifications{background:var(--white)}
+.cert-groups{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.cg{background:var(--bg);border:1.5px solid var(--border);border-radius:12px;overflow:hidden}
+.cg-hdr{padding:14px 18px;background:var(--white);border-bottom:1.5px solid var(--border);display:flex;align-items:center;gap:10px}
+.cg-ico{font-size:18px}
+.cg-name{font-size:13px;font-weight:700;color:var(--navy)}
+.cg-items{padding:8px 0}
+.ci2{display:flex;align-items:flex-start;gap:10px;padding:9px 18px;transition:background .15s;cursor:default}
+.ci2:hover{background:var(--teal3)}
+.ctick{width:18px;height:18px;border-radius:50%;background:var(--green2);border:1.5px solid var(--green);display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--green);flex-shrink:0;margin-top:1px}
+.cname{font-size:12.5px;color:var(--slate);line-height:1.5}
+
+/* GLOBAL MAP — proper world map using SVG paths */
+#global{background:var(--bg)}
+.globe-wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.country-list{display:flex;flex-direction:column;gap:9px}
+.crow{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:12px 16px;background:var(--white);
+  border:1.5px solid var(--border);border-radius:8px;
+  transition:all .18s;cursor:default;position:relative;
+}
+.crow::before{content:'';position:absolute;left:0;top:4px;bottom:4px;width:3px;border-radius:2px;background:var(--teal);opacity:0;transition:opacity .18s}
+.crow:hover{border-color:var(--teal);transform:translateX(5px);box-shadow:0 2px 12px rgba(0,153,204,.1)}
+.crow:hover::before{opacity:1}
+.cfn{display:flex;align-items:center;gap:11px}
+.cflag{font-size:20px}
+.cname2{font-size:13.5px;font-weight:600;color:var(--navy)}
+.csub{font-size:11px;color:var(--slate3)}
+.ccount{font-family:var(--mono);font-size:12px;color:var(--teal);font-weight:700}
+
+/* WORLD MAP — proper SVG world */
+.map-container{
+  background:var(--navy);border-radius:14px;
+  overflow:hidden;border:1.5px solid var(--border);
+  box-shadow:var(--shadow-lg);
+}
+.map-header{
+  background:var(--navy2);padding:12px 20px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.map-title-txt{font-family:var(--mono);font-size:12px;color:rgba(255,255,255,.7);letter-spacing:.5px}
+.map-legend{display:flex;gap:16px}
+.ml-item{display:flex;align-items:center;gap:5px;font-size:11px;color:rgba(255,255,255,.5);font-family:var(--mono)}
+.ml-dot{width:8px;height:8px;border-radius:50%}
+.map-svg-wrap{padding:16px;position:relative}
+.world-svg{width:100%;height:auto;display:block}
+/* pulsing marker animation */
+@keyframes markerPulse{
+  0%{r:8;opacity:.8}
+  50%{r:14;opacity:.2}
+  100%{r:8;opacity:.8}
+}
+.pulse-ring{animation:markerPulse 2.5s ease-in-out infinite}
+.map-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid rgba(255,255,255,.08)}
+.ms{text-align:center;padding:14px;border-right:1px solid rgba(255,255,255,.08)}
+.ms:last-child{border-right:none}
+.ms-v{font-family:var(--mono);font-size:22px;font-weight:700;color:var(--teal2)}
+.ms-l{font-size:10px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.6px}
+
+/* EDUCATION */
+#personal{background:var(--white)}
+.personal-grid{display:grid;grid-template-columns:1fr 2fr;gap:48px}
+.edu-card2{background:var(--bg);border:1.5px solid var(--border);border-radius:12px;padding:24px}
+.edu-deg{font-size:17px;font-weight:700;color:var(--navy);margin-bottom:4px}
+.edu-inst{font-size:14px;color:var(--teal);margin-bottom:2px;font-weight:500}
+.edu-yr{font-family:var(--mono);font-size:12px;color:var(--slate3);margin-bottom:18px}
+.ediv{height:1px;background:var(--border);margin:16px 0}
+.ef{font-size:10px;color:var(--slate3);text-transform:uppercase;letter-spacing:.8px;font-family:var(--mono);margin-bottom:3px}
+.ev{font-size:13.5px;color:var(--slate);margin-bottom:14px}
+.prof-wrap{}
+.prof-sum{font-size:15px;line-height:1.8;color:var(--slate);margin-bottom:24px;max-width:600px}
+.prof-sum b{color:var(--navy);font-weight:600}
+.prof-sum .hl{color:var(--teal);font-weight:600}
+.attr-pills{display:flex;flex-wrap:wrap;gap:8px}
+.apill{font-size:12px;font-weight:600;padding:6px 14px;border-radius:20px;background:var(--teal3);color:var(--teal);border:1px solid rgba(0,153,204,.2)}
+
+/* FOOTER */
+footer{
+  background:var(--navy);padding:32px 5%;
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;
+}
+.f-brand{font-family:var(--mono);font-size:14px;font-weight:700;color:#fff;letter-spacing:1px}
+.f-brand span{color:var(--teal)}
+.f-links{display:flex;gap:20px;flex-wrap:wrap}
+.f-link{font-size:12px;font-family:var(--mono);color:rgba(255,255,255,.5);text-decoration:none;letter-spacing:.4px;transition:color .18s;display:flex;align-items:center;gap:6px}
+.f-link:hover{color:var(--teal)}
+.f-link svg{width:13px;height:13px}
+.f-copy{font-size:12px;color:rgba(255,255,255,.3);font-family:var(--mono)}
+
+/* TOOLTIP */
+.tt{position:relative;display:inline-block}
+.ttb{
+  position:absolute;bottom:calc(100% + 8px);left:50%;
+  transform:translateX(-50%) translateY(6px);
+  background:var(--navy);border:1px solid rgba(255,255,255,.1);
+  border-radius:8px;padding:10px 14px;
+  min-width:200px;max-width:260px;
+  font-size:12.5px;color:rgba(255,255,255,.8);line-height:1.5;
+  opacity:0;pointer-events:none;transition:all .2s;z-index:300;white-space:normal;
+  box-shadow:0 8px 24px rgba(0,0,0,.3);
+}
+.ttb strong{display:block;color:var(--teal2);font-size:13px;margin-bottom:4px;font-family:var(--mono)}
+.ttb::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:rgba(255,255,255,.1)}
+.tt:hover .ttb{opacity:1;transform:translateX(-50%) translateY(0)}
+.tt-r .ttb{left:auto;right:0;transform:translateX(0) translateY(6px)}
+.tt-r:hover .ttb{transform:translateX(0) translateY(0)}
+.tt-r .ttb::after{left:auto;right:16px;transform:none}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
+.rv.on{opacity:1;transform:translateY(0)}
+.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}
+.rv.d3{transition-delay:.3s}.rv.d4{transition-delay:.4s}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .hero{grid-template-columns:1fr;min-height:auto;padding-top:90px}
+  .hero::before{display:none}
+  .hero-right{align-items:flex-start;flex-direction:row;flex-wrap:wrap;gap:20px}
+  .mini-kpis{grid-template-columns:repeat(4,1fr);max-width:100%}
+  .skills-wrap{grid-template-columns:1fr}
+  .innov-grid{grid-template-columns:1fr 1fr}
+  .hl-grid{grid-template-columns:1fr 1fr}
+  .cert-groups{grid-template-columns:1fr}
+  .globe-wrap{grid-template-columns:1fr}
+  .personal-grid{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+  section{padding:60px 5%}
+  nav{padding:0 4%}
+  .hero{padding:80px 4% 40px}
+  .n-links{display:none}
+  .hero-name{font-size:30px}
+  .mini-kpis{grid-template-columns:1fr 1fr}
+  .innov-grid{grid-template-columns:1fr}
+  .hl-grid{grid-template-columns:1fr}
+  footer{flex-direction:column;text-align:center}
+  .exp-card-header{grid-template-columns:auto 1fr}
+  .exp-hdr-right{display:none}
+}
+</style>
+</head>
+<body>
+
+<div id="cur"></div>
+<div id="cur-r"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="n-brand">YK<span>.</span>RESUME</div>
+  <div class="n-links">
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#innovation">Innovation</a>
+    <a href="#highlights">Clients</a>
+    <a href="#certifications">Certs</a>
+    <a href="#global">Global</a>
+    <a href="mailto:banalachaitu@gmail.com" class="n-btn">Hire Me</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-left">
+    <div class="hero-tag">Open to Senior Leadership Roles</div>
+    <h1 class="hero-name">Yadu Krishna<br><span class="teal">Chaitanya Banala</span></h1>
+    <p class="hero-role"><strong>Senior Test Manager</strong> &nbsp;·&nbsp; QA Architect &nbsp;·&nbsp; Digital Transformation Leader</p>
+    <p class="hero-summary">
+      <b>19+ years</b> leading end-to-end QA delivery, mainframe modernization &amp; cloud migration for global enterprises across Utilities, Retail &amp; BFSI. Currently directing a <b>70+ member team</b> for <b>JSE Mainframe Modernization</b> at Trianz — building GenAI-powered automation tools across AU · UK · EU · USA · India.
+    </p>
+    <div class="hero-btns">
+      <a href="#experience" class="btn-p">Explore Experience ↓</a>
+      <a href="mailto:banalachaitu@gmail.com" class="btn-s">📧 Get in Touch</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="photo-wrap tt">
+      <div class="photo-ring">
+        <img src="data:image/jpeg;base64,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" alt="Yadu Krishna Chaitanya Banala — Senior Test Manager">
+      </div>
+      <div class="photo-badge">19<span>+</span> Years · QA Leader</div>
+      <div class="ttb"><strong>Yadu Krishna Chaitanya Banala</strong>Senior Test Manager · Hyderabad, India<br>banalachaitu@gmail.com · +91 9989022448</div>
+    </div>
+    <div class="mini-kpis">
+      <div class="mk tt">
+        <div class="mk-val"><span class="cu" data-t="70">0</span><em>+</em></div>
+        <div class="mk-lbl">Team Led</div>
+        <div class="ttb"><strong>70+ Multi-Shore Team</strong>Currently at Trianz — AU, UK, EU, USA, India for JSE Mainframe Modernization</div>
+      </div>
+      <div class="mk tt">
+        <div class="mk-val"><span class="cu" data-t="40">0</span><em>%</em></div>
+        <div class="mk-lbl">Efficiency Gain</div>
+        <div class="ttb"><strong>GenAI-Powered Delivery</strong>Trianz Amaize GenAI cut documentation prep time by 40% at JSE BDA</div>
+      </div>
+      <div class="mk tt">
+        <div class="mk-val"><span class="cu" data-t="14">0</span><em>+</em></div>
+        <div class="mk-lbl">Global Projects</div>
+        <div class="ttb"><strong>14+ Concurrent Projects</strong>Led 30-member team at Ray Business Technologies across AU, CA, USA, IN, PH</div>
+      </div>
+      <div class="mk tt">
+        <div class="mk-val"><span class="cu" data-t="7">0</span></div>
+        <div class="mk-lbl">Countries</div>
+        <div class="ttb"><strong>7 Countries Delivered</strong>IN · AU · UK (onsite) · ZA (JSE) · USA · CA · PH. On-site in Birmingham &amp; Solihull UK.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT STRIP -->
+<div class="cstrip">
+  <a href="mailto:banalachaitu@gmail.com" class="ci">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+    <span class="ci-val">banalachaitu@gmail.com</span>
+  </a>
+  <a href="tel:+919989022448" class="ci">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.7 1.14 2 2 0 012.7 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    <span class="ci-val">+91 9989022448</span>
+  </a>
+  <a href="https://www.linkedin.com/in/kcprofile" target="_blank" rel="noopener" class="ci">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+    <span class="ci-val">linkedin.com/in/kcprofile</span>
+  </a>
+  <div class="ci">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+    <span>Hyderabad — 500074, India</span>
+  </div>
+</div>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-inner">
+    <span class="t-item">Senior Test Manager<span class="t-dot">✦</span></span><span class="t-item">19+ Years QA Leadership<span class="t-dot">✦</span></span><span class="t-item">Mainframe Modernization<span class="t-dot">✦</span></span><span class="t-item">COBOL · IDEAL 4GL · JCL<span class="t-dot">✦</span></span><span class="t-item">Azure DevOps · 3× Certified<span class="t-dot">✦</span></span><span class="t-item">TOSCA L1/L2/Engineer<span class="t-dot">✦</span></span><span class="t-item">Playwright · TestNG<span class="t-dot">✦</span></span><span class="t-item">SAFe® Agilist<span class="t-dot">✦</span></span><span class="t-item">GenAI Tooling<span class="t-dot">✦</span></span><span class="t-item">VSAM → DB2 Migration<span class="t-dot">✦</span></span><span class="t-item">JSE · Lloyds Banking · Xoserve · RWE Npower<span class="t-dot">✦</span></span><span class="t-item">AU · UK · USA · IN · ZA · CA · PH<span class="t-dot">✦</span></span>
+    <span class="t-item">Senior Test Manager<span class="t-dot">✦</span></span><span class="t-item">19+ Years QA Leadership<span class="t-dot">✦</span></span><span class="t-item">Mainframe Modernization<span class="t-dot">✦</span></span><span class="t-item">COBOL · IDEAL 4GL · JCL<span class="t-dot">✦</span></span><span class="t-item">Azure DevOps · 3× Certified<span class="t-dot">✦</span></span><span class="t-item">TOSCA L1/L2/Engineer<span class="t-dot">✦</span></span><span class="t-item">Playwright · TestNG<span class="t-dot">✦</span></span><span class="t-item">SAFe® Agilist<span class="t-dot">✦</span></span><span class="t-item">GenAI Tooling<span class="t-dot">✦</span></span><span class="t-item">VSAM → DB2 Migration<span class="t-dot">✦</span></span><span class="t-item">JSE · Lloyds Banking · Xoserve · RWE Npower<span class="t-dot">✦</span></span><span class="t-item">AU · UK · USA · IN · ZA · CA · PH<span class="t-dot">✦</span></span>
+  </div>
+</div>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="sec-tag">Career History</div>
+  <h2 class="sec-h">Work <span>Experience</span></h2>
+  <div class="exp-cards">
+
+    <div class="exp-card rv" id="ec1">
+      <div class="exp-card-header" onclick="toggleExp('ec1')">
+        <div class="exp-logo">TDC</div>
+        <div class="exp-hdr-mid">
+          <div class="exp-co">Trianz Digital Consultancy Pvt. Ltd.</div>
+          <div class="exp-role-sm">Senior Test Manager</div>
+        </div>
+        <div class="exp-hdr-right">
+          <div class="exp-dates">Jul 2025 — Present</div>
+          <div class="exp-team">👥 70+ Team</div>
+        </div>
+      </div>
+      <div class="exp-body open" id="ec1-body">
+        <ul class="exp-bullets">
+          <li>Spearheaded end-to-end QA delivery for Mainframe Modernization &amp; Cloud Migration across BFSI, Retail, Energy &amp; Utilities — including <strong>JSE (Johannesburg Stock Exchange)</strong> and D&amp;B US Trade</li>
+          <li>Directed <strong>70+ member multi-shore QA team</strong> across AU, UK, EU, USA &amp; India — mentoring, performance management, GenAI adoption culture</li>
+          <li>Designed comprehensive QA strategies: system integration, regression, dual-run, API, UI, performance &amp; security testing for modernization programs</li>
+          <li>Leveraged <strong>Trianz Amaize GenAI</strong> to auto-generate BRDs, epics, user stories, test cases &amp; scripts — <strong>40% reduction in prep time</strong> with full traceability</li>
+          <li>Built proprietary Python automation tools analysing 80+ IDEAL 4GL &amp; COBOL mainframe programs — eliminating 3–4 weeks manual work item creation per engagement</li>
+          <li>Led mainframe batch, CICS transaction testing, VSAM→DB2 migration; PII masking, synthetic data generation, GDPR compliance validation</li>
+          <li>Implemented screen-by-screen UI comparison between legacy mainframe &amp; AWS-migrated systems; drove Playwright/TestNG CI/CD automation</li>
+          <li>Coordinated UAT readiness, business sign-offs &amp; hypercare — <strong>zero high-severity defects at production cutover</strong></li>
+        </ul>
+        <div class="exp-tags">
+          <span class="exp-tag">JSE BDA</span><span class="exp-tag">D&amp;B US Trade</span><span class="exp-tag">IDEAL 4GL</span><span class="exp-tag">COBOL/JCL</span><span class="exp-tag">VSAM→DB2</span><span class="exp-tag">Playwright</span><span class="exp-tag">GenAI</span><span class="exp-tag">AWS</span><span class="exp-tag">CI/CD</span>
+        </div>
+        <div class="exp-toggle open" onclick="toggleExp('ec1')"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18,15 12,9 6,15"/></svg> Show less</div>
+      </div>
+    </div>
+
+    <div class="exp-card rv d1" id="ec2">
+      <div class="exp-card-header" onclick="toggleExp('ec2')">
+        <div class="exp-logo">RBT</div>
+        <div class="exp-hdr-mid">
+          <div class="exp-co">Ray Business Technologies Pvt. Ltd.</div>
+          <div class="exp-role-sm">QA Manager / Project Manager</div>
+        </div>
+        <div class="exp-hdr-right">
+          <div class="exp-dates">Jan 2022 — May 2025</div>
+          <div class="exp-team">👥 30 Team</div>
+        </div>
+      </div>
+      <div class="exp-body" id="ec2-body">
+        <ul class="exp-bullets">
+          <li>Led 30-member global QA team across <strong>14+ concurrent projects</strong>: Marcaria, SYDA, CRM, Kentico, OVH, ABS CBN, CAMS, Retail Academy, RAPS, Screen Rights, CWR-AX Upgrade, HGX, PO Automation, AML</li>
+          <li>Clients across <strong>Australia, Canada, USA, India &amp; Philippines</strong> — Agile &amp; DevOps delivery frameworks</li>
+          <li>Single point of contact for all QA communications; oversaw effort estimation, resource planning &amp; billing oversight</li>
+          <li>Instituted enterprise-grade QA frameworks: process documentation, policy, templates, trackers &amp; automation-first strategies</li>
+          <li>Pivotal pre-sales role advising on QA capabilities; forged strategic vendor partnerships expanding delivery capacity</li>
+        </ul>
+        <div class="exp-tags"><span class="exp-tag">Agile/DevOps</span><span class="exp-tag">14+ Projects</span><span class="exp-tag">AU/CA/USA/IN/PH</span><span class="exp-tag">Pre-Sales</span></div>
+        <div class="exp-toggle" onclick="toggleExp('ec2')"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg> Show more</div>
+      </div>
+    </div>
+
+    <div class="exp-card rv d2" id="ec3">
+      <div class="exp-card-header" onclick="toggleExp('ec3')">
+        <div class="exp-logo">WPR</div>
+        <div class="exp-hdr-mid">
+          <div class="exp-co">Wipro Technologies Pvt. Ltd.</div>
+          <div class="exp-role-sm">Test Manager / Project Manager (9 Years)</div>
+        </div>
+        <div class="exp-hdr-right">
+          <div class="exp-dates">Feb 2013 — Jan 2022</div>
+          <div class="exp-team">👥 Up to 25</div>
+        </div>
+      </div>
+      <div class="exp-body" id="ec3-body">
+        <ul class="exp-bullets">
+          <li><strong style="color:var(--teal)">Lloyds Banking Group (May 2021–Jan 2022 · Team: 15)</strong> — Strategic Pre-Approval: 5 microservices APIs into Personal Loan Lending; CIT, ST, LUAT, OAT, NFT, Pen Test &amp; Pre-Production phases</li>
+          <li><strong style="color:var(--teal)">Xoserve — SAP Maintenance Upgrade (Aug 2020–May 2021 · Team: 25)</strong> — OS, Database &amp; Azure Cloud upgrade; DR testing, UAT &amp; OAT; ServiceNow EDOC incident management</li>
+          <li><strong style="color:var(--teal)">Xoserve — Azure Cloud Migration (Nov 2019–Jul 2020 · Team: 15)</strong> — UK Link Non-Production to Microsoft Azure; OAT, Connected, Baseline &amp; Security Testing</li>
+          <li><strong style="color:var(--teal)">RWE Npower — Back Billing &amp; Perkins (Mar 2018–May 2019 · Birmingham)</strong> — CCL levy calculations I&amp;C HH/NHH; back-billing 12–19 months post Junifer CIS migration</li>
+          <li><strong style="color:var(--teal)">RWE Npower — EMR Phase 5A &amp; 5B (May 2016–Apr 2017 · Birmingham/Hyd · Team: 10)</strong> — UK Government electricity infrastructure; end-to-end test cycles, SQL data validation</li>
+          <li><strong style="color:var(--teal)">RWE Npower — Regulatory (2017–2018)</strong> — BILLIT &amp; SPRITE regulatory changes; BASDA XML invoice implementation; Nov Regulatory Releases; EMR Billing Fixes</li>
+        </ul>
+        <div class="exp-tags"><span class="exp-tag">Lloyds Banking</span><span class="exp-tag">Xoserve</span><span class="exp-tag">RWE Npower</span><span class="exp-tag">Azure Migration</span><span class="exp-tag">SAP</span><span class="exp-tag">EMR 5A/5B</span><span class="exp-tag">Birmingham UK</span><span class="exp-tag">HP ALM</span></div>
+        <div class="exp-toggle" onclick="toggleExp('ec3')"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg> Show more</div>
+      </div>
+    </div>
+
+    <div class="exp-card rv d3" id="ec4">
+      <div class="exp-card-header" onclick="toggleExp('ec4')">
+        <div class="exp-logo">VIT</div>
+        <div class="exp-hdr-mid">
+          <div class="exp-co">ViT Consultancy Pvt. Ltd.</div>
+          <div class="exp-role-sm">Senior Test Engineer</div>
+        </div>
+        <div class="exp-hdr-right">
+          <div class="exp-dates">Jun 2011 — Feb 2013</div>
+          <div class="exp-team">👥 8 Team</div>
+        </div>
+      </div>
+      <div class="exp-body" id="ec4-body">
+        <ul class="exp-bullets">
+          <li>Delivered end-to-end functional, regression, integration &amp; performance testing across multiple client engagements in diverse domains</li>
+          <li>Developed test plans, strategies, test cases &amp; defect reports; executed across web and application layers</li>
+          <li>Mentored junior QA engineers in test design, defect reporting standards &amp; STLC best practices</li>
+          <li>Collaborated with developers &amp; BAs to review requirements, clarify acceptance criteria, ensure test coverage</li>
+          <li>Tracked defects through full lifecycle using standard test management tools; conducted peer reviews</li>
+        </ul>
+        <div class="exp-tags"><span class="exp-tag">STLC</span><span class="exp-tag">Mentoring</span><span class="exp-tag">Functional Testing</span><span class="exp-tag">Defect Management</span></div>
+        <div class="exp-toggle" onclick="toggleExp('ec4')"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg> Show more</div>
+      </div>
+    </div>
+
+    <div class="exp-card rv d4" id="ec5">
+      <div class="exp-card-header" onclick="toggleExp('ec5')">
+        <div class="exp-logo">HSB</div>
+        <div class="exp-hdr-mid">
+          <div class="exp-co">HSBC India Pvt. Ltd.</div>
+          <div class="exp-role-sm">Tester</div>
+        </div>
+        <div class="exp-hdr-right">
+          <div class="exp-dates">Aug 2006 — May 2011</div>
+          <div class="exp-team">👥 5 Team</div>
+        </div>
+      </div>
+      <div class="exp-body" id="ec5-body">
+        <ul class="exp-bullets">
+          <li>Performed functional, regression &amp; system testing for core banking applications in high-compliance BFSI environment</li>
+          <li>Executed test cases for retail banking modules: account management, transactions &amp; customer data validation</li>
+          <li>Logged, tracked &amp; followed up defects with development &amp; business teams; ensured timely closure &amp; re-testing</li>
+          <li>Participated in test planning, requirement walkthroughs &amp; UAT support alongside business stakeholders</li>
+          <li>Built strong BFSI domain expertise — the bedrock of a 19+ year QA leadership career</li>
+        </ul>
+        <div class="exp-tags"><span class="exp-tag">BFSI</span><span class="exp-tag">Core Banking</span><span class="exp-tag">UAT</span><span class="exp-tag">Defect Lifecycle</span></div>
+        <div class="exp-toggle" onclick="toggleExp('ec5')"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg> Show more</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="sec-tag">Proficiency</div>
+  <h2 class="sec-h">Skills <span>&amp; Tools</span></h2>
+  <div class="skills-wrap">
+    <div>
+      <div class="skill-group rv">
+        <div class="sgn">Core QA &amp; Leadership</div>
+        <div class="srow tt"><span class="sname">QA Strategy &amp; Leadership</span><div class="strack"><div class="sfill" data-w="96"></div></div><span class="spct">96%</span><div class="ttb"><strong>19+ Years</strong>End-to-end QA ownership, team building, governance, C-level reporting</div></div>
+        <div class="srow tt"><span class="sname">Agile / SAFe Delivery</span><div class="strack"><div class="sfill" data-w="94"></div></div><span class="spct">94%</span><div class="ttb"><strong>SAFe® Certified Agilist</strong>Sprint planning, backlog grooming, PI planning, Agile Release Trains</div></div>
+        <div class="srow tt"><span class="sname">Stakeholder Management</span><div class="strack"><div class="sfill" data-w="94"></div></div><span class="spct">94%</span><div class="ttb"><strong>Client &amp; C-Level Engagement</strong>Executive dashboards, pre-sales advisory, client relationship management</div></div>
+        <div class="srow tt"><span class="sname">Risk Management</span><div class="strack"><div class="sfill" data-w="92"></div></div><span class="spct">92%</span><div class="ttb"><strong>Risk &amp; Change Management</strong>Proactive risk identification, mitigation plans, change impact analysis</div></div>
+      </div>
+      <div class="skill-group rv d1">
+        <div class="sgn">Testing &amp; Automation</div>
+        <div class="srow tt"><span class="sname">TOSCA Automation</span><div class="strack"><div class="sfill" data-w="90"></div></div><span class="spct">90%</span><div class="ttb"><strong>TOSCA L1/L2/Engineer Certified</strong>Model-based automation, risk-based testing, CI/CD integration</div></div>
+        <div class="srow tt"><span class="sname">Playwright / Selenium / TestNG</span><div class="strack"><div class="sfill" data-w="86"></div></div><span class="spct">86%</span><div class="ttb"><strong>Modern Automation Frameworks</strong>API, UI &amp; regression automation in DevOps pipelines at JSE BDA</div></div>
+        <div class="srow tt"><span class="sname">Performance &amp; Security Testing</span><div class="strack"><div class="sfill" data-w="84"></div></div><span class="spct">84%</span><div class="ttb"><strong>NFT &amp; Pen Test</strong>JMeter, SOAP UI, penetration testing coordination, OAT &amp; load validation</div></div>
+        <div class="srow tt"><span class="sname">CI/CD &amp; DevOps</span><div class="strack"><div class="sfill" data-w="82"></div></div><span class="spct">82%</span><div class="ttb"><strong>Jenkins · Azure Pipelines · GitHub</strong>Pipeline design, automated test execution &amp; reporting</div></div>
+      </div>
+      <div class="skill-group rv d2">
+        <div class="sgn">Cloud &amp; Mainframe</div>
+        <div class="srow tt"><span class="sname">Mainframe / COBOL / IDEAL 4GL</span><div class="strack"><div class="sfill" data-w="88"></div></div><span class="spct">88%</span><div class="ttb"><strong>JSE BDA Specialist</strong>COBOL, JCL, CICS, DB2, VSAM, IDEAL 4GL, SAR, Vision Plus</div></div>
+        <div class="srow tt"><span class="sname">Azure Cloud &amp; Migration</span><div class="strack"><div class="sfill" data-w="86"></div></div><span class="spct">86%</span><div class="ttb"><strong>3× Microsoft Azure Certified</strong>Azure Admin, DevOps Expert, AZ-400. Led Xoserve cloud migration.</div></div>
+        <div class="srow tt"><span class="sname">SAP Testing</span><div class="strack"><div class="sfill" data-w="76"></div></div><span class="spct">76%</span><div class="ttb"><strong>SAP ISU &amp; Maintenance</strong>SAP Maintenance Upgrade for Xoserve UK Link Operating System</div></div>
+        <div class="srow tt"><span class="sname">Python &amp; GenAI Tooling</span><div class="strack"><div class="sfill" data-w="76"></div></div><span class="spct">76%</span><div class="ttb"><strong>JSE BDA Modernizer</strong>Python tools for mainframe static analysis, BLA generation &amp; work item pipeline</div></div>
+      </div>
+    </div>
+    <div class="tool-section rv d1">
+      <div>
+        <div class="tc-lbl">DevOps &amp; Cloud</div>
+        <div class="tc-pills"><span class="pill">Azure Administration</span><span class="pill">Azure DevOps</span><span class="pill">Terraform</span><span class="pill">Azure CLI</span><span class="pill">Azure SQL</span><span class="pill">AWS</span><span class="pill">Jenkins</span><span class="pill">GitHub / GitLab</span></div>
+      </div>
+      <div>
+        <div class="tc-lbl">Automation &amp; Testing</div>
+        <div class="tc-pills"><span class="pill">TOSCA L1/L2</span><span class="pill">Playwright</span><span class="pill">Selenium WebDriver</span><span class="pill">TestNG</span><span class="pill">Robot Framework</span><span class="pill">HP ALM</span><span class="pill">JIRA</span><span class="pill">JMeter</span><span class="pill">SOAP UI</span><span class="pill">Postman</span><span class="pill">RestAssured</span><span class="pill">Katalon Studio</span><span class="pill">IBM RTC/RQM</span></div>
+      </div>
+      <div>
+        <div class="tc-lbl">Mainframe &amp; Legacy</div>
+        <div class="tc-pills"><span class="pill">COBOL</span><span class="pill">JCL</span><span class="pill">CICS</span><span class="pill">DB2</span><span class="pill">VSAM</span><span class="pill">IDEAL 4GL</span><span class="pill">SAR</span><span class="pill">Vision Plus</span></div>
+      </div>
+      <div>
+        <div class="tc-lbl">Programming &amp; Scripting</div>
+        <div class="tc-pills"><span class="pill">Python</span><span class="pill">COBOL</span><span class="pill">JCL</span><span class="pill">VBScript</span><span class="pill">Groovy</span><span class="pill">PowerShell</span></div>
+      </div>
+      <div>
+        <div class="tc-lbl">Test Management &amp; ITSM</div>
+        <div class="tc-pills"><span class="pill">HP ALM</span><span class="pill">IBM RQM/RTC</span><span class="pill">JIRA</span><span class="pill">ServiceNow (EDOC)</span><span class="pill">Power BI</span></div>
+      </div>
+      <div>
+        <div class="tc-lbl">Databases &amp; IDEs</div>
+        <div class="tc-pills"><span class="pill">DB2</span><span class="pill">Oracle Database</span><span class="pill">Azure SQL Database</span><span class="pill">PyCharm</span><span class="pill">IntelliJ</span><span class="pill">Eclipse</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INNOVATION -->
+<section id="innovation">
+  <div class="sec-tag">JSE BDA · Trianz Digital · 2025</div>
+  <h2 class="sec-h">Innovation <span>&amp; Tools Delivered</span></h2>
+  <div class="innov-grid">
+    <div class="icard rv tt">
+      <div class="inum">01 · AUTOMATION</div>
+      <div class="ititle">Mainframe Code Analysis Automation</div>
+      <div class="idesc">Automatically analyses 80+ legacy IDEAL 4GL &amp; COBOL programs, extracting business logic — enabling test planning significantly earlier.</div>
+      <div class="imet"><span class="imet-val">60%</span><span class="imet-lbl">reduction in BA effort</span></div>
+      <div class="ttb" style="bottom:auto;top:calc(100% + 8px)"><strong>Business Impact</strong>80 programs · 15MB codebase · Weeks of manual code review eliminated. Immediate test planning readiness.</div>
+    </div>
+    <div class="icard rv d1 tt">
+      <div class="inum">02 · AI / GENAI</div>
+      <div class="ititle">Business Rule Translation Engine</div>
+      <div class="idesc">AI-assisted engine converting raw COBOL/IDEAL logic into plain business language — understandable to non-technical stakeholders instantly.</div>
+      <div class="imet"><span class="imet-val">50hrs</span><span class="imet-lbl">saved per program</span></div>
+      <div class="ttb" style="bottom:auto;top:calc(100% + 8px)"><strong>Business Impact</strong>Removed BA-developer bottleneck. Business-ready output from day one of analysis.</div>
+    </div>
+    <div class="icard rv d2 tt">
+      <div class="inum">03 · AUTOMATION</div>
+      <div class="ititle">End-to-End Work Item Generation</div>
+      <div class="idesc">Auto-generates Epics → Features → User Stories → Test Cases → Test Scenarios across 12 semantic business areas in one consolidated output.</div>
+      <div class="imet"><span class="imet-val">3–4wks</span><span class="imet-lbl">saved per engagement</span></div>
+      <div class="ttb" style="bottom:auto;top:calc(100% + 8px)"><strong>Business Impact</strong>12 semantic classifications · One Excel workbook · Zero manual test writing for known programs.</div>
+    </div>
+    <div class="icard rv d3 tt">
+      <div class="inum">04 · GENAI</div>
+      <div class="ititle">Automated Business Documentation</div>
+      <div class="idesc">Produces fully structured BLA documents — scope tables, requirement cards with acceptance criteria &amp; sign-off sections from live code.</div>
+      <div class="imet"><span class="imet-val">40%</span><span class="imet-lbl">faster documentation</span></div>
+      <div class="ttb" style="bottom:auto;top:calc(100% + 8px)"><strong>Business Impact</strong>Full BLA Word documents auto-generated per program. Zero manual documentation.</div>
+    </div>
+    <div class="icard rv d4 tt">
+      <div class="inum">05 · LEADERSHIP</div>
+      <div class="ititle">Executive Stakeholder Decision Tool</div>
+      <div class="idesc">Interactive app presenting 3 QA approach options with trade-offs, risks &amp; timeline impacts — led to formal scope agreement with JSE leadership.</div>
+      <div class="imet"><span class="imet-val">1</span><span class="imet-lbl">formal milestone freeze</span></div>
+      <div class="ttb" style="bottom:auto;top:calc(100% + 8px)"><strong>Business Impact</strong>JSE scope formally frozen. Project protected from scope creep. Client relationship strengthened.</div>
+    </div>
+  </div>
+</section>
+
+<!-- KEY CLIENTS & DOMAINS -->
+<section id="highlights">
+  <div class="sec-tag">Clients &amp; Domain Depth</div>
+  <h2 class="sec-h">Key Clients <span>&amp; Experience</span></h2>
+  <div class="hl-grid rv">
+    <div class="hcard tt"><div class="hclient">JSE — Johannesburg Stock Exchange</div><div class="hdomain">BFSI · Mainframe Modernization</div><div class="hdetail">IDEAL 4GL &amp; COBOL → Java/Angular/AWS. VSAM→DB2 migration. 80+ programs.</div><div class="ttb"><strong>JSE BDA</strong>Largest single-client mainframe modernization engagement at Trianz Digital.</div></div>
+    <div class="hcard tt"><div class="hclient">Lloyds Banking Group</div><div class="hdomain">BFSI · Microservices APIs</div><div class="hdetail">Strategic Pre-Approval — 5 microservices APIs into Personal Loan Lending Journey. CIT, OAT, NFT, Pen Test.</div><div class="ttb"><strong>Lloyds Banking Group UK</strong>Personal loan digital journey API integration with LEQ via APIC gateway.</div></div>
+    <div class="hcard tt"><div class="hclient">Xoserve (UK)</div><div class="hdomain">Utilities · Azure Cloud</div><div class="hdetail">Azure Cloud Migration of UK Link infrastructure. SAP Maintenance Upgrade. DR Testing &amp; OAT.</div><div class="ttb"><strong>Xoserve UK</strong>Two engagements: Azure migration (2019–2020) + SAP Upgrade (2020–2021).</div></div>
+    <div class="hcard tt"><div class="hclient">RWE Npower (UK)</div><div class="hdomain">Energy · EMR · Billing</div><div class="hdetail">EMR 5A &amp; 5B, Back Billing, CCL levy, BASDA XML, Regulatory releases. On-site Birmingham.</div><div class="ttb"><strong>RWE Npower UK</strong>7 engagements 2016–2019. On-site Birmingham &amp; Hyderabad. UK Government electricity.</div></div>
+    <div class="hcard tt"><div class="hclient">D&amp;B US Trade</div><div class="hdomain">BFSI · Data Analytics</div><div class="hdetail">Dun &amp; Bradstreet US Trade testing via Trianz Digital. Part of global multi-client portfolio.</div><div class="ttb"><strong>Dun &amp; Bradstreet</strong>Global financial data &amp; analytics engagement at Trianz.</div></div>
+    <div class="hcard tt"><div class="hclient">ABS CBN</div><div class="hdomain">Media · Content</div><div class="hdetail">Philippine media broadcaster. QA delivery via Ray Business Technologies from Australia.</div><div class="ttb"><strong>ABS CBN Philippines</strong>Major Philippine media broadcaster. Coordinated from Australia office.</div></div>
+    <div class="hcard tt"><div class="hclient">HSBC India</div><div class="hdomain">BFSI · Core Banking</div><div class="hdetail">Core banking functional &amp; regression testing. High-compliance BFSI environment. 2006–2011.</div><div class="ttb"><strong>HSBC India</strong>Aug 2006–May 2011. 5 years core banking in a global bank — career foundation.</div></div>
+    <div class="hcard tt"><div class="hclient">Ray BT Portfolio</div><div class="hdomain">Multi-Domain · 14+ Projects</div><div class="hdetail">Marcaria, SYDA, CRM, Kentico, OVH, CAMS, Retail Academy, RAPS, Screen Rights, CWR-AX, HGX, AML+.</div><div class="ttb"><strong>14+ Concurrent Projects</strong>AU, CA, USA, India, Philippines simultaneously — retail, legal, media, finance, CRM.</div></div>
+  </div>
+
+  <!-- Domain Experience Bars -->
+  <div class="dom-title rv">Domain Experience — Across 19+ Year Career</div>
+  <div class="dom-bars rv d1">
+    <div class="drow tt"><span class="dlbl">BFSI &amp; Banking</span><div class="dtrack"><div class="dfill bfsi" data-w="90">Full career exposure</div></div><span class="dyrs">19+ yrs</span><div class="ttb"><strong>BFSI Across Full Career</strong>HSBC (2006–11) + Lloyds Banking (2021–22) + JSE (2025–present). BFSI is the dominant domain across the full 19-year career.</div></div>
+    <div class="drow tt"><span class="dlbl">Utilities &amp; Energy</span><div class="dtrack"><div class="dfill util" data-w="68">Xoserve + RWE Npower</div></div><span class="dyrs">~7 yrs</span><div class="ttb"><strong>Utilities &amp; Energy at Wipro</strong>RWE Npower (2016–2019) + Xoserve (2019–2021) = ~5 years focused delivery. Plus Trianz multi-domain exposure.</div></div>
+    <div class="drow tt"><span class="dlbl">Retail &amp; Commerce</span><div class="dtrack"><div class="dfill ret" data-w="38">Ray BT portfolio</div></div><span class="dyrs">~3 yrs</span><div class="ttb"><strong>Retail Projects at Ray BT</strong>Retail Academy, Kentico, Marcaria and other retail/commerce projects 2022–2025.</div></div>
+    <div class="drow tt"><span class="dlbl">Mainframe &amp; Legacy</span><div class="dtrack"><div class="dfill mf" data-w="46">JSE BDA + HSBC</div></div><span class="dyrs">~4 yrs</span><div class="ttb"><strong>Mainframe Specialization</strong>JSE BDA IDEAL 4GL/COBOL/VSAM/DB2 (2025–present) + HSBC core banking mainframe systems (2006–2011).</div></div>
+    <div class="drow tt"><span class="dlbl">Cloud &amp; Migration</span><div class="dtrack"><div class="dfill cloud" data-w="52">Xoserve + Trianz AWS</div></div><span class="dyrs">~5 yrs</span><div class="ttb"><strong>Cloud Migration Testing</strong>Xoserve Azure Migration (2019–20) + SAP Upgrade in Azure (2020–21) + JSE AWS modernization (2025–present).</div></div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="sec-tag">Credentials</div>
+  <h2 class="sec-h">Certifications <span>&amp; Training</span></h2>
+  <div class="cert-groups">
+    <div class="cg rv">
+      <div class="cg-hdr"><span class="cg-ico">☁️</span><span class="cg-name">Microsoft Azure</span></div>
+      <div class="cg-items">
+        <div class="ci2 tt"><div class="ctick">✓</div><div class="cname">Microsoft Certified: Azure Fundamentals (AZ-900)</div><div class="ttb"><strong>AZ-900</strong>Cloud concepts, core Azure services, security, compliance &amp; pricing</div></div>
+        <div class="ci2 tt"><div class="ctick">✓</div><div class="cname">Microsoft Certified: Azure Admin Associate (AZ-104)</div><div class="ttb"><strong>AZ-104</strong>Azure identities, governance, storage, compute &amp; networking</div></div>
+        <div class="ci2 tt"><div class="ctick">✓</div><div class="cname">Microsoft Certified: DevOps Engineer Expert</div><div class="ttb"><strong>DevOps Expert</strong>CI/CD pipelines, infrastructure as code, security &amp; monitoring</div></div>
+        <div class="ci2 tt"><div class="ctick">✓</div><div class="cname">AZ-400: Designing &amp; Implementing Microsoft DevOps Solutions</div><div class="ttb"><strong>AZ-400</strong>DevOps strategies, dependency management, continuous delivery</div></div>
+      </div>
+    </div>
+    <div class="cg rv d1">
+      <div class="cg-hdr"><span class="cg-ico">🤖</span><span class="cg-name">Tricentis TOSCA</span></div>
+      <div class="cg-items">
+        <div class="ci2 tt"><div class="ctick">✓</div><div class="cname">Automation Specialist Level 1</div><div class="ttb"><strong>TOSCA Specialist L1</strong>Model-based automation, test case design &amp; risk-based testing</div></div>
+        <div class="ci2 tt"><div class="ctick">✓</div><div class="cname">Automation Specialist Level 2</div><div class="ttb"><strong>TOSCA Specialist L2</strong>Advanced automation, distributed execution &amp; enterprise test management</div></div>
+        <div class="ci2 tt"><div class="ctick">✓</div><div class="cname">Automation Engineer Level 1</div><div class="ttb"><strong>TOSCA Engineer L1</strong>Advanced configuration, scripting &amp; CI/CD integration</div></div>
+        <div class="ci2 tt"><div class="ctick">✓</div><div class="cname">Test Design Specialist Level 1 &amp; 2</div><div class="ttb"><strong>Test Design L1/L2</strong>Equivalence class, linear expansion, buffer testing &amp; advanced design</div></div>
+        <div class="ci2 tt"><div class="ctick">✓</div><div class="cname">Tricentis Certified Professional</div><div class="ttb"><strong>TCP</strong>Highest Tricentis certification — all TOSCA domains mastered</div></div>
+      </div>
+    </div>
+    <div class="cg rv d2">
+      <div class="cg-hdr"><span class="cg-ico">🎯</span><span class="cg-name">Agile &amp; Other</span></div>
+      <div class="cg-items">
+        <div class="ci2 tt"><div class="ctick">✓</div><div class="cname">Katalon Expert Level Certification</div><div class="ttb"><strong>Katalon Expert</strong>Advanced web, API &amp; mobile test automation with Katalon Studio</div></div>
+        <div class="ci2 tt"><div class="ctick">✓</div><div class="cname">Certified SAFe® Agilist</div><div class="ttb"><strong>SAFe® Agilist</strong>Lean-Agile mindset, PI planning, Agile Release Trains, SAFe values</div></div>
+        <div class="ci2 tt"><div class="ctick">✓</div><div class="cname">Developing Resourcefulness — LinkedIn Learning</div><div class="ttb"><strong>Soft Skills</strong>Building resilience, creative problem-solving &amp; adaptive leadership</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GLOBAL -->
+<section id="global">
+  <div class="sec-tag">Worldwide Reach</div>
+  <h2 class="sec-h">Global <span>Delivery</span></h2>
+  <div class="globe-wrap">
+    <div class="country-list">
+      <div class="crow tt rv"><div class="cfn"><span class="cflag">🇮🇳</span><div><div class="cname2">India</div><div class="csub">Base · All 5 employers · 19 years</div></div></div><div class="ccount">19 yrs</div><div class="ttb"><strong>India — Home Base</strong>Trianz Hyd · Ray BT · Wipro · ViT Consultancy · HSBC India. Career home for all 19+ years.</div></div>
+      <div class="crow tt rv d1"><div class="cfn"><span class="cflag">🇦🇺</span><div><div class="cname2">Australia</div><div class="csub">Trianz · Ray Business Technologies</div></div></div><div class="ccount">8 projects</div><div class="ttb"><strong>Australia</strong>Trianz: JSE &amp; D&amp;B · Ray BT: Marcaria, SYDA, ABS CBN, Screen Rights, Retail Academy and more.</div></div>
+      <div class="crow tt rv d2"><div class="cfn"><span class="cflag">🇬🇧</span><div><div class="cname2">United Kingdom</div><div class="csub">Wipro — On-site Birmingham &amp; Solihull</div></div></div><div class="ccount">4+ projects</div><div class="ttb"><strong>UK On-Site Delivery</strong>RWE Npower Birmingham · Lloyds Banking Group · Xoserve Utilities</div></div>
+      <div class="crow tt rv d3"><div class="cfn"><span class="cflag">🇿🇦</span><div><div class="cname2">South Africa (JSE)</div><div class="csub">Trianz — Johannesburg Stock Exchange</div></div></div><div class="ccount">JSE BDA</div><div class="ttb"><strong>JSE</strong>Mainframe modernization — IDEAL/COBOL to Java/Angular/AWS. VSAM→DB2.</div></div>
+      <div class="crow tt rv d4"><div class="cfn"><span class="cflag">🇺🇸</span><div><div class="cname2">United States</div><div class="csub">Trianz — D&amp;B US Trade</div></div></div><div class="ccount">3 projects</div><div class="ttb"><strong>USA</strong>Dun &amp; Bradstreet US Trade via Trianz Digital.</div></div>
+      <div class="crow tt rv"><div class="cfn"><span class="cflag">🇨🇦</span><div><div class="cname2">Canada</div><div class="csub">Ray Business Technologies</div></div></div><div class="ccount">2 projects</div><div class="ttb"><strong>Canada</strong>Marcaria · RAPS via Ray Business Technologies.</div></div>
+      <div class="crow tt rv d1"><div class="cfn"><span class="cflag">🇵🇭</span><div><div class="cname2">Philippines</div><div class="csub">Ray BT · ABS CBN</div></div></div><div class="ccount">2 projects</div><div class="ttb"><strong>Philippines</strong>ABS CBN — Philippine media broadcaster. Remote QA.</div></div>
+      <div class="crow tt rv d2"><div class="cfn"><span class="cflag">🇪🇺</span><div><div class="cname2">European Union</div><div class="csub">Trianz — JSE EU Clients</div></div></div><div class="ccount">EU Clients</div><div class="ttb"><strong>EU</strong>JSE Trianz client base includes EU stakeholders.</div></div>
+    </div>
+
+    <!-- PROPER WORLD MAP using real SVG country outlines (simplified) -->
+    <div class="map-container rv d1">
+      <div class="map-header">
+        <span class="map-title-txt">🌏 Global Delivery Network — Yadu Krishna</span>
+        <div class="map-legend">
+          <div class="ml-item"><div class="ml-dot" style="background:#00d4ff"></div>Primary</div>
+          <div class="ml-item"><div class="ml-dot" style="background:#f59e0b"></div>USA</div>
+          <div class="ml-item"><div class="ml-dot" style="background:#a78bfa"></div>JSE/ZA</div>
+        </div>
+      </div>
+      <div class="map-svg-wrap">
+        <svg class="world-svg" viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg">
+          <!-- ocean background -->
+          <rect width="1000" height="500" fill="#0d1f38"/>
+          <!-- grid -->
+          <defs>
+            <pattern id="grid" width="100" height="50" patternUnits="userSpaceOnUse">
+              <path d="M100 0 L0 0 0 50" fill="none" stroke="rgba(0,212,255,0.04)" stroke-width=".5"/>
+            </pattern>
+          </defs>
+          <rect width="1000" height="500" fill="url(#grid)"/>
+          <!-- equator -->
+          <line x1="0" y1="250" x2="1000" y2="250" stroke="rgba(0,212,255,0.08)" stroke-width=".8" stroke-dasharray="6,12"/>
+
+          <!-- NORTH AMERICA -->
+          <path d="M 120 80 L 175 60 L 220 70 L 255 90 L 265 120 L 255 160 L 240 200 L 210 230 L 185 245 L 155 240 L 130 220 L 110 190 L 100 155 L 108 120 Z" fill="rgba(0,153,204,0.15)" stroke="rgba(0,153,204,0.4)" stroke-width="1"/>
+          <!-- Mexico/Central America -->
+          <path d="M 155 240 L 185 245 L 195 270 L 185 285 L 165 275 L 148 258 Z" fill="rgba(0,153,204,0.1)" stroke="rgba(0,153,204,0.3)" stroke-width=".8"/>
+          <!-- SOUTH AMERICA -->
+          <path d="M 185 285 L 215 275 L 255 285 L 280 320 L 285 370 L 265 415 L 235 430 L 205 415 L 185 380 L 175 340 L 178 305 Z" fill="rgba(0,153,204,0.12)" stroke="rgba(0,153,204,0.35)" stroke-width=".8"/>
+
+          <!-- GREENLAND -->
+          <path d="M 230 30 L 270 20 L 310 35 L 300 60 L 265 65 L 235 55 Z" fill="rgba(0,153,204,0.08)" stroke="rgba(0,153,204,0.2)" stroke-width=".5"/>
+
+          <!-- EUROPE -->
+          <path d="M 430 80 L 480 65 L 520 72 L 540 90 L 530 115 L 500 130 L 465 138 L 440 125 L 428 105 Z" fill="rgba(0,153,204,0.15)" stroke="rgba(0,153,204,0.4)" stroke-width=".8"/>
+          <!-- Iberian -->
+          <path d="M 430 130 L 455 125 L 460 148 L 440 155 L 428 142 Z" fill="rgba(0,153,204,0.1)" stroke="rgba(0,153,204,0.3)" stroke-width=".5"/>
+          <!-- Scandinavia -->
+          <path d="M 480 40 L 510 30 L 525 55 L 510 75 L 490 70 Z" fill="rgba(0,153,204,0.1)" stroke="rgba(0,153,204,0.3)" stroke-width=".5"/>
+
+          <!-- UK (highlighted) -->
+          <path d="M 445 90 L 462 82 L 470 95 L 458 108 L 445 100 Z" fill="rgba(0,212,255,0.35)" stroke="rgba(0,212,255,0.7)" stroke-width="1.2"/>
+
+          <!-- AFRICA -->
+          <path d="M 450 160 L 520 148 L 560 165 L 575 210 L 570 270 L 550 325 L 515 355 L 478 345 L 452 305 L 438 255 L 438 205 Z" fill="rgba(0,153,204,0.12)" stroke="rgba(0,153,204,0.35)" stroke-width=".8"/>
+
+          <!-- RUSSIA/ASIA (top) -->
+          <path d="M 560 40 L 700 25 L 800 40 L 840 65 L 800 85 L 720 95 L 650 90 L 590 78 L 555 60 Z" fill="rgba(0,153,204,0.1)" stroke="rgba(0,153,204,0.25)" stroke-width=".5"/>
+
+          <!-- MIDDLE EAST -->
+          <path d="M 540 150 L 590 140 L 615 160 L 610 190 L 580 200 L 548 188 Z" fill="rgba(0,153,204,0.1)" stroke="rgba(0,153,204,0.25)" stroke-width=".5"/>
+
+          <!-- INDIA (highlighted) -->
+          <path d="M 640 160 L 685 152 L 710 168 L 715 200 L 700 235 L 672 248 L 645 235 L 632 205 L 630 180 Z" fill="rgba(0,212,255,0.35)" stroke="rgba(0,212,255,0.7)" stroke-width="1.5"/>
+
+          <!-- CHINA/EAST ASIA -->
+          <path d="M 700 80 L 790 68 L 840 88 L 845 125 L 820 148 L 768 158 L 715 148 L 700 120 Z" fill="rgba(0,153,204,0.1)" stroke="rgba(0,153,204,0.25)" stroke-width=".5"/>
+          <!-- Japan -->
+          <path d="M 848 100 L 870 90 L 880 108 L 865 122 L 848 115 Z" fill="rgba(0,153,204,0.1)" stroke="rgba(0,153,204,0.25)" stroke-width=".5"/>
+          <!-- SE Asia/Philippines (highlighted) -->
+          <path d="M 770 190 L 820 178 L 840 198 L 825 218 L 795 215 Z" fill="rgba(0,212,255,0.25)" stroke="rgba(0,212,255,0.5)" stroke-width="1"/>
+
+          <!-- AUSTRALIA (highlighted) -->
+          <path d="M 760 310 L 855 295 L 905 315 L 920 360 L 905 405 L 855 420 L 785 415 L 745 385 L 738 348 Z" fill="rgba(0,212,255,0.3)" stroke="rgba(0,212,255,0.65)" stroke-width="1.5"/>
+          <!-- NZ -->
+          <path d="M 925 390 L 948 375 L 958 395 L 940 415 L 922 408 Z" fill="rgba(0,153,204,0.12)" stroke="rgba(0,153,204,0.3)" stroke-width=".5"/>
+
+          <!-- SOUTH AFRICA (highlighted) -->
+          <path d="M 488 328 L 525 318 L 548 338 L 540 368 L 510 380 L 482 362 Z" fill="rgba(167,139,250,0.4)" stroke="rgba(167,139,250,0.8)" stroke-width="1.5"/>
+
+          <!-- ══ DELIVERY MARKERS ══ -->
+          <!-- INDIA (hub) -->
+          <circle cx="672" cy="200" r="22" fill="rgba(0,212,255,0.08)" stroke="rgba(0,212,255,0.15)"><animate attributeName="r" values="18;30;18" dur="3s" repeatCount="indefinite"/><animate attributeName="opacity" values=".8;.1;.8" dur="3s" repeatCount="indefinite"/></circle>
+          <circle cx="672" cy="200" r="10" fill="#00d4ff" opacity=".95"/>
+          <circle cx="672" cy="200" r="4" fill="white"/>
+          <text x="672" y="178" text-anchor="middle" fill="white" font-size="11" font-family="JetBrains Mono,monospace" font-weight="700" opacity=".95">IN · 19yr</text>
+
+          <!-- AUSTRALIA -->
+          <circle cx="835" cy="358" r="18" fill="rgba(0,212,255,0.08)" stroke="rgba(0,212,255,0.15)"><animate attributeName="r" values="13;22;13" dur="3.5s" repeatCount="indefinite"/><animate attributeName="opacity" values=".8;.1;.8" dur="3.5s" repeatCount="indefinite"/></circle>
+          <circle cx="835" cy="358" r="8" fill="#00d4ff" opacity=".92"/>
+          <circle cx="835" cy="358" r="3" fill="white"/>
+          <text x="835" y="337" text-anchor="middle" fill="white" font-size="10" font-family="JetBrains Mono,monospace" font-weight="700" opacity=".9">AU · 8</text>
+
+          <!-- UK -->
+          <circle cx="455" cy="95" r="15" fill="rgba(0,212,255,0.08)" stroke="rgba(0,212,255,0.15)"><animate attributeName="r" values="10;20;10" dur="2.8s" repeatCount="indefinite"/><animate attributeName="opacity" values=".8;.1;.8" dur="2.8s" repeatCount="indefinite"/></circle>
+          <circle cx="455" cy="95" r="7" fill="#00d4ff" opacity=".92"/>
+          <circle cx="455" cy="95" r="3" fill="white"/>
+          <text x="455" y="73" text-anchor="middle" fill="white" font-size="10" font-family="JetBrains Mono,monospace" font-weight="700" opacity=".9">UK</text>
+
+          <!-- USA -->
+          <circle cx="185" cy="158" r="14" fill="rgba(245,158,11,0.12)" stroke="rgba(245,158,11,0.2)"><animate attributeName="r" values="10;20;10" dur="3.2s" repeatCount="indefinite"/><animate attributeName="opacity" values=".8;.1;.8" dur="3.2s" repeatCount="indefinite"/></circle>
+          <circle cx="185" cy="158" r="7" fill="#f59e0b" opacity=".92"/>
+          <circle cx="185" cy="158" r="3" fill="white"/>
+          <text x="185" y="136" text-anchor="middle" fill="white" font-size="10" font-family="JetBrains Mono,monospace" font-weight="700" opacity=".9">USA</text>
+
+          <!-- SOUTH AFRICA / JSE -->
+          <circle cx="510" cy="348" r="14" fill="rgba(167,139,250,0.15)" stroke="rgba(167,139,250,0.25)"><animate attributeName="r" values="10;20;10" dur="2.6s" repeatCount="indefinite"/><animate attributeName="opacity" values=".8;.1;.8" dur="2.6s" repeatCount="indefinite"/></circle>
+          <circle cx="510" cy="348" r="7" fill="#a78bfa" opacity=".92"/>
+          <circle cx="510" cy="348" r="3" fill="white"/>
+          <text x="510" y="326" text-anchor="middle" fill="white" font-size="10" font-family="JetBrains Mono,monospace" font-weight="700" opacity=".9">JSE·ZA</text>
+
+          <!-- CANADA -->
+          <circle cx="168" cy="105" r="9" fill="rgba(0,212,255,0.1)" stroke="rgba(0,212,255,0.3)" stroke-width="1"/>
+          <circle cx="168" cy="105" r="5" fill="#00d4ff" opacity=".8"/>
+          <text x="168" y="88" text-anchor="middle" fill="rgba(255,255,255,.75)" font-size="9" font-family="JetBrains Mono,monospace">CA</text>
+
+          <!-- PHILIPPINES -->
+          <circle cx="805" cy="198" r="9" fill="rgba(0,212,255,0.1)" stroke="rgba(0,212,255,0.3)" stroke-width="1"/>
+          <circle cx="805" cy="198" r="5" fill="#00d4ff" opacity=".8"/>
+          <text x="805" y="180" text-anchor="middle" fill="rgba(255,255,255,.75)" font-size="9" font-family="JetBrains Mono,monospace">PH</text>
+
+          <!-- EU dot -->
+          <circle cx="490" cy="98" r="7" fill="rgba(0,212,255,0.08)" stroke="rgba(0,212,255,0.2)" stroke-width="1"/>
+          <circle cx="490" cy="98" r="4" fill="#00d4ff" opacity=".7"/>
+
+          <!-- CONNECTION LINES from India hub -->
+          <line x1="672" y1="200" x2="835" y2="358" stroke="rgba(0,212,255,0.2)" stroke-width="1.2" stroke-dasharray="5,8"/>
+          <line x1="672" y1="200" x2="455" y2="95" stroke="rgba(0,212,255,0.2)" stroke-width="1.2" stroke-dasharray="5,8"/>
+          <line x1="672" y1="200" x2="185" y2="158" stroke="rgba(245,158,11,0.25)" stroke-width="1" stroke-dasharray="5,8"/>
+          <line x1="672" y1="200" x2="510" y2="348" stroke="rgba(167,139,250,0.3)" stroke-width="1" stroke-dasharray="5,8"/>
+          <line x1="672" y1="200" x2="805" y2="198" stroke="rgba(0,212,255,0.15)" stroke-width=".8" stroke-dasharray="4,8"/>
+          <line x1="672" y1="200" x2="168" y2="105" stroke="rgba(0,212,255,0.15)" stroke-width=".8" stroke-dasharray="4,8"/>
+        </svg>
+      </div>
+      <div class="map-stats">
+        <div class="ms"><div class="ms-v">7</div><div class="ms-l">Countries</div></div>
+        <div class="ms"><div class="ms-v">3</div><div class="ms-l">Continents</div></div>
+        <div class="ms"><div class="ms-v">19+</div><div class="ms-l">Years Global</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION & PROFILE -->
+<section id="personal">
+  <div class="sec-tag">Background</div>
+  <h2 class="sec-h">Education <span>&amp; Profile</span></h2>
+  <div class="personal-grid">
+    <div class="edu-card2 rv">
+      <div class="edu-deg">Bachelor of Arts (B.A.)</div>
+      <div class="edu-inst">Andhra University</div>
+      <div class="edu-yr">2010 · Hyderabad, India</div>
+      <div class="ediv"></div>
+      <div class="ef">Date of Birth</div><div class="ev">21st August 1986</div>
+      <div class="ef">Languages Known</div><div class="ev">English · Hindi · Telugu</div>
+      <div class="ef">Location</div><div class="ev">Hyderabad — 500074, India</div>
+      <div class="ef">Contact</div><div class="ev">banalachaitu@gmail.com<br>+91 9989022448</div>
+    </div>
+    <div class="prof-wrap rv d1">
+      <div class="prof-sum">
+        Seasoned <b>QA Manager and Project Manager</b> with over <span class="hl">19 years</span> of comprehensive experience driving end-to-end Software Testing, Quality Assurance, and Project Delivery across <b>Utilities, Retail, and BFSI</b>. Known for delivering high-quality solutions, fostering cross-functional collaboration, and ensuring alignment with strategic business objectives.<br><br>
+        Proven track record of managing large-scale testing engagements for global clients in the <b>US, UK, and Australia</b>, including on-site assignments in <b>Birmingham and Solihull</b>. Analytical, dedicated &amp; versatile leader with innate skills in building high-performing multi-cultural teams — high morale &amp; low attrition.
+      </div>
+      <div class="ef" style="margin-bottom:10px">Professional Attributes</div>
+      <div class="attr-pills">
+        <span class="apill">Leader</span><span class="apill">Innovator</span><span class="apill">Analytical</span><span class="apill">Collaborator</span><span class="apill">Intuitive</span><span class="apill">Cross-Cultural Builder</span><span class="apill">Low Attrition Record</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-brand">YK<span>.</span>RESUME</div>
+  <div class="f-links">
+    <a href="mailto:banalachaitu@gmail.com" class="f-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      banalachaitu@gmail.com
+    </a>
+    <a href="tel:+919989022448" class="f-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.7 1.14 2 2 0 012.7 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      +91 9989022448
+    </a>
+    <a href="https://www.linkedin.com/in/kcprofile" target="_blank" rel="noopener" class="f-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      linkedin.com/in/kcprofile
+    </a>
+    <a href="#home" class="f-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18,15 12,9 6,15"/></svg>
+      Back to Top
+    </a>
+  </div>
+  <div class="f-copy">Yadu Krishna Chaitanya Banala · Senior Test Manager · Hyderabad</div>
+</footer>
+
+<script>
+// CURSOR
+const cur=document.getElementById("cur"),ring=document.getElementById("cur-r");
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener("mousemove",e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+"px";cur.style.top=my+"px";});
+(function a(){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;ring.style.left=rx+"px";ring.style.top=ry+"px";requestAnimationFrame(a);})();
+document.querySelectorAll("a,button,.exp-card,.icard,.hcard,.crow,.ci2,.mk,.srow,.pill").forEach(el=>{
+  el.addEventListener("mouseenter",()=>ring.classList.add("lg"));
+  el.addEventListener("mouseleave",()=>ring.classList.remove("lg"));
+});
+
+// COUNT UP
+const cuObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(!e.isIntersecting)return;
+    const el=e.target,tgt=+el.dataset.t;let c=0;
+    const step=tgt/(1200/16);
+    const tm=setInterval(()=>{c=Math.min(c+step,tgt);el.textContent=Math.floor(c);if(c>=tgt)clearInterval(tm);},16);
+    cuObs.unobserve(el);
+  });
+},{threshold:.5});
+document.querySelectorAll(".cu").forEach(el=>cuObs.observe(el));
+
+// SKILL + DOMAIN BARS
+const barObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(!e.isIntersecting)return;
+    e.target.querySelectorAll("[data-w]").forEach(b=>{setTimeout(()=>{b.style.width=b.dataset.w+"%";},100);});
+    barObs.unobserve(e.target);
+  });
+},{threshold:.1});
+document.querySelectorAll("#skills,#highlights").forEach(s=>barObs.observe(s));
+
+// SCROLL REVEAL
+const rv=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("on");});},{threshold:.07});
+document.querySelectorAll(".rv").forEach(el=>rv.observe(el));
+
+// ACTIVE NAV
+const navAs=document.querySelectorAll(".n-links a[href^='#']");
+document.querySelectorAll("section[id]").forEach(s=>{
+  new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        navAs.forEach(a=>a.classList.remove("active"));
+        const a=document.querySelector('.n-links a[href="#'+e.target.id+'"]');
+        if(a)a.classList.add("active");
+      }
+    });
+  },{threshold:.3}).observe(s);
+});
+
+// SMOOTH SCROLL
+document.querySelectorAll("a[href^='#']").forEach(a=>{
+  a.addEventListener("click",e=>{
+    const t=document.querySelector(a.getAttribute("href"));
+    if(t){e.preventDefault();t.scrollIntoView({behavior:"smooth",block:"start"});}
+  });
+});
+
+// NAV SCROLL
+window.addEventListener("scroll",()=>{
+  document.getElementById("nav").style.boxShadow=window.scrollY>40?"0 2px 20px rgba(0,0,0,.12)":"0 1px 12px rgba(0,0,0,.06)";
+},{passive:true});
+
+// EXPAND/COLLAPSE EXPERIENCE
+function toggleExp(id){
+  const body=document.getElementById(id+"-body");
+  const toggle=body.querySelector(".exp-toggle");
+  const isOpen=body.classList.contains("open");
+  body.classList.toggle("open",!isOpen);
+  if(toggle){
+    toggle.classList.toggle("open",!isOpen);
+    toggle.innerHTML=(!isOpen
+      ?'<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18,15 12,9 6,15"/></svg> Show less'
+      :'<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg> Show more');
+  }
+}
+</script>
+</body>
+</html>
